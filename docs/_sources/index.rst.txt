@@ -11,10 +11,3 @@ Welcome to odoo-test.sh's documentation!
    :caption: Contents:
 
 
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
