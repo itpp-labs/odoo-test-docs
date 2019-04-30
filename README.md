@@ -1,5 +1,6 @@
-# odoo-development
+# odoo-test
 
+* TODO: automate publishing github pages
 
 # How to contribute
 
@@ -23,7 +24,7 @@
 
 * Try it out:
 
-      cd /path/to/odoo-development/docs
+      cd /path/to/odoo-test/docs
       make html
 
       # (check warningn and errors in compilation logs and fix them if needed)
@@ -31,4 +32,9 @@
       # open result
       google-chrome _build/html/index.html
 
+* To publish:
+
+      cd /path/to/odoo-test/docs
+      make github
+      
 * Make commits, push, create Pull Request
