@@ -24,7 +24,7 @@
 
 * Try it out:
 
-      cd /path/to/odoo-test/docs
+      cd /path/to/odoo-test/doc-src
       make html
 
       # (check warningn and errors in compilation logs and fix them if needed)
@@ -34,7 +34,7 @@
 
 * To publish:
 
-      cd /path/to/odoo-test/docs
+      cd /path/to/odoo-test/doc-src
       make github
       
 * Make commits, push, create Pull Request
