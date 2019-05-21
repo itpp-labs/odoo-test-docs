@@ -1,0 +1,140 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Paypal testing &#8212; odoo-test.sh  documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="paypal-testing">
+<h1>Paypal testing<a class="headerlink" href="#paypal-testing" title="Permalink to this headline">¶</a></h1>
+<p>To test paypal payments you need to:</p>
+<ul class="simple">
+<li>Create developer account</li>
+<li>Add seller and buyer in developer sandbox</li>
+<li>Configure odoo</li>
+<li>Directly testing</li>
+</ul>
+<div class="section" id="create-developer-account">
+<h2>Create developer account<a class="headerlink" href="#create-developer-account" title="Permalink to this headline">¶</a></h2>
+<p>Go to <a class="reference external" href="https://developer.paypal.com/">https://developer.paypal.com/</a> and create new account.</p>
+</div>
+<div class="section" id="add-seller-and-buyer">
+<h2>Add seller and buyer<a class="headerlink" href="#add-seller-and-buyer" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Go to <strong>Dashboard-&gt;Sand box-&gt;Accounts</strong>. Create business (seller) and personal (buyer) accounts. It’s recommended to don’t use non-ascii symbols in account information (address, name etc.)</li>
+<li>Add some money to buyer (type amount in according field).</li>
+<li>Go to <a class="reference external" href="http://sandbox.paypal.com">http://sandbox.paypal.com</a> and login as seller. May be you will be forced to apply unconfirmed ssl certificate.</li>
+<li>Go to <strong>Profile</strong>.</li>
+<li>Copy <em>protected seller code</em>.</li>
+</ul>
+</div>
+<div class="section" id="configure-odoo">
+<h2>Configure odoo<a class="headerlink" href="#configure-odoo" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Install <strong>payment_paypal</strong> module</li>
+<li>Go to <strong>Settings-&gt;Payments-&gt;Payments-&gt;Paypal</strong>.</li>
+<li>Pres <strong>Edit</strong>.</li>
+<li>Enter here <strong>Paypal Email ID</strong> - it is <em>seller</em> account.</li>
+<li>Enter <strong>Paypal Merchant ID</strong> - paste <em>protected seller code</em>.</li>
+<li>Set price list currency same as in paypal account.</li>
+</ul>
+</div>
+<div class="section" id="directly-testing">
+<h2>Directly testing<a class="headerlink" href="#directly-testing" title="Permalink to this headline">¶</a></h2>
+<p>Open web shop. Buy some goods and pay with paypal. When you will be redirected on paypal page use <em>buyer</em> login and password.</p>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">odoo-test.sh</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2019, IT-Projects LLC.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.5</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/qa/paypal.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
