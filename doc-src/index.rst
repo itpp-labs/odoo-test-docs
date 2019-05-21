@@ -10,4 +10,8 @@ Welcome to odoo-test.sh's documentation!
    :maxdepth: 2
    :caption: Contents:
 
+   qa/index
+   js_tour
+
+
 
