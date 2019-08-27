@@ -11,7 +11,7 @@ Welcome to odoo-test.sh's documentation!
    :caption: Contents:
 
    qa/index
-   js_tour
+   js-tour
 
 
 

@@ -2,7 +2,7 @@
  JS tests via Tours
 ====================
 
-How to run :doc:`odoo tours<../../description/js_tour>` in :doc:`phantom_js <phantom_js>` method?
+How to run :doc:`odoo tours <../js-tour>` in :doc:`phantom_js <phantom_js>` method?
 
 10.0+
 =====
