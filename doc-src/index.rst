@@ -7,11 +7,9 @@ Welcome to odoo-test.sh's documentation!
 ========================================
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
    :caption: Contents:
 
    qa/index
    js-tour
-
-
-
+   old-ver/index
