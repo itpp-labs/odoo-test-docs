@@ -1,0 +1,164 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Auto Launch after installation &#8212; odoo-test.sh  documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Open backend menu" href="backend.html" />
+    <link rel="prev" title="Older Versions" href="index.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="auto-launch-after-installation">
+<h1>Auto Launch after installation<a class="headerlink" href="#auto-launch-after-installation" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id1">
+<h2>8.0, 9.0<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>To run tour after module installation do next steps.</p>
+<blockquote>
+<div><ul class="simple">
+<li>Create <em>ToDo</em></li>
+<li>Create <em>Action</em></li>
+</ul>
+</div></blockquote>
+<p>ToDo is some queued web actions that may call <em>Action</em> like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">record</span> <span class="nb">id</span><span class="o">=</span><span class="s2">&quot;base.open_menu&quot;</span> <span class="n">model</span><span class="o">=</span><span class="s2">&quot;ir.actions.todo&quot;</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">field</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;action_id&quot;</span> <span class="n">ref</span><span class="o">=</span><span class="s2">&quot;action_website_tutorial&quot;</span><span class="o">/&gt;</span>
+    <span class="o">&lt;</span><span class="n">field</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;state&quot;</span><span class="o">&gt;</span><span class="nb">open</span><span class="o">&lt;/</span><span class="n">field</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">record</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>Action is like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">record</span> <span class="nb">id</span><span class="o">=</span><span class="s2">&quot;res_partner_mails_count_tutorial&quot;</span> <span class="n">model</span><span class="o">=</span><span class="s2">&quot;ir.actions.act_url&quot;</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">field</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;name&quot;</span><span class="o">&gt;</span><span class="n">res_partner_mails_count</span> <span class="n">Tutorial</span><span class="o">&lt;/</span><span class="n">field</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">field</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;url&quot;</span><span class="o">&gt;/</span><span class="n">web</span><span class="c1">#id=3&amp;amp;model=res.partner&amp;amp;/#tutorial_extra.mails_count_tour=true&lt;/field&gt;</span>
+    <span class="o">&lt;</span><span class="n">field</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;target&quot;</span><span class="o">&gt;</span><span class="bp">self</span><span class="o">&lt;/</span><span class="n">field</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">record</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>Here tutorial_extra.**mails_count_tour** is tour id.</p>
+<p>Use eval to compute some python code if needed:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">field</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;url&quot;</span> <span class="nb">eval</span><span class="o">=</span><span class="s2">&quot;&#39;/web?debug=1&amp;amp;res_partner_mails_count=tutorial#id=&#39;+str(ref(&#39;base.partner_root&#39;))+&#39;&amp;amp;view_type=form&amp;amp;model=res.partner&amp;amp;/#tutorial_extra.mails_count_tour=true&#39;&quot;</span><span class="o">/&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">odoo-test.sh</a></h1>
+
+
+
+
+
+
+<p>
+<iframe src="https://ghbtns.com/github-btn.html?user=it-projects-llc&repo=odoo-test&type=watch&count=true&size=large&v=2"
+  allowtransparency="true" frameborder="0" scrolling="0" width="200px" height="35px"></iframe>
+</p>
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../qa/index.html">Quality assurance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../js-tour.html">JS Tour</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Older Versions</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Auto Launch after installation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">8.0, 9.0</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="backend.html">Open backend menu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manual-launch.html">Manual Launching</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  <li><a href="index.html">Older Versions</a><ul>
+      <li>Previous: <a href="index.html" title="previous chapter">Older Versions</a></li>
+      <li>Next: <a href="backend.html" title="next chapter">Open backend menu</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2019, IT-Projects LLC.
+
+       | <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="nofollow">License: CC BY-NC-SA 4.0</a>
+
+      
+      |
+      <a href="../_sources/older-versions/auto-launch.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+    <a href="https://github.com/it-projects-llc/odoo-test" class="github">
+        <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"  class="github"/>
+    </a>
+    
+
+    
+  </body>
+</html>

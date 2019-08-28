@@ -16,6 +16,7 @@
     <script type="text/javascript" src="_static/language_data.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Older versions" href="older-versions/index.html" />
     <link rel="prev" title="Paypal testing" href="qa/paypal.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
@@ -36,56 +37,46 @@
   <div class="section" id="js-tour">
 <h1>JS Tour<a class="headerlink" href="#js-tour" title="Permalink to this headline">¶</a></h1>
 <p>Tour is a set of steps of possible scenario of module usage.</p>
-<p>Steps may be executed automatically for <a class="reference internal" href="qa/js/index.html"><span class="doc">testing</span></a> purpose or by user for <a class="reference internal" href="#auto-launch-after-installation"><span class="std std-ref">demostrating</span></a> purpose.</p>
+<p>Steps may be executed automatically for <a class="reference internal" href="qa/js/index.html"><span class="doc">testing</span></a> purpose or by user for <a class="reference internal" href="older-versions/9/manual-launch.html#auto-launch-after-installation"><span class="std std-ref">demostrating</span></a> purpose.</p>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><a class="reference internal" href="#tour-definition" id="id14">Tour Definition</a><ul>
-<li><a class="reference internal" href="#id1" id="id15">10.0+</a><ul>
-<li><a class="reference internal" href="#example" id="id16">Example</a></li>
-<li><a class="reference internal" href="#options" id="id17">Options</a></li>
-<li><a class="reference internal" href="#step" id="id18">Step</a></li>
-<li><a class="reference internal" href="#predefined-steps" id="id19">Predefined steps</a></li>
-<li><a class="reference internal" href="#more-documentation" id="id20">More documentation</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#id2" id="id21">8.0, 9.0</a><ul>
-<li><a class="reference internal" href="#id3" id="id22">Example</a></li>
-<li><a class="reference internal" href="#tour-register" id="id23">Tour.register</a></li>
-<li><a class="reference internal" href="#id4" id="id24">Step</a></li>
-<li><a class="reference internal" href="#id5" id="id25">More documentation</a></li>
+<li><a class="reference internal" href="#tour-definition" id="id6">Tour Definition</a><ul>
+<li><a class="reference internal" href="#id1" id="id7">10.0+</a><ul>
+<li><a class="reference internal" href="#example" id="id8">Example</a></li>
+<li><a class="reference internal" href="#options" id="id9">Options</a></li>
+<li><a class="reference internal" href="#step" id="id10">Step</a></li>
+<li><a class="reference internal" href="#predefined-steps" id="id11">Predefined steps</a></li>
+<li><a class="reference internal" href="#more-documentation" id="id12">More documentation</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a class="reference internal" href="#open-backend-menu" id="id26">Open backend menu</a><ul>
-<li><a class="reference internal" href="#id6" id="id27">11.0+</a></li>
-<li><a class="reference internal" href="#id7" id="id28">9.0, 10.0</a><ul>
-<li><a class="reference internal" href="#manifest" id="id29">Manifest</a></li>
-<li><a class="reference internal" href="#load-xmlid" id="id30">load_xmlid</a></li>
-<li><a class="reference internal" href="#tour" id="id31">Tour</a></li>
+<li><a class="reference internal" href="#open-backend-menu" id="id13">Open backend menu</a><ul>
+<li><a class="reference internal" href="#id2" id="id14">11.0+</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#id8" id="id32">8.0</a></li>
+<li><a class="reference internal" href="#manual-launching" id="id15">Manual launching</a><ul>
+<li><a class="reference internal" href="#id3" id="id16">10.0+</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#manual-launching" id="id33">Manual launching</a><ul>
-<li><a class="reference internal" href="#id9" id="id34">10.0+</a></li>
-<li><a class="reference internal" href="#id10" id="id35">8.0, 9.0</a></li>
+<li><a class="reference internal" href="#auto-launch-after-installation" id="id17">Auto Launch after installation</a><ul>
+<li><a class="reference internal" href="#id4" id="id18">9.0, 10.0</a><ul>
+<li><a class="reference internal" href="#manifest" id="id19">Manifest</a></li>
+<li><a class="reference internal" href="#load-xmlid" id="id20">load_xmlid</a></li>
+<li><a class="reference internal" href="#tour" id="id21">Tour</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#auto-launch-after-installation" id="id36">Auto Launch after installation</a><ul>
-<li><a class="reference internal" href="#id12" id="id37">10.0+</a></li>
-<li><a class="reference internal" href="#id13" id="id38">8.0, 9.0</a></li>
+<li><a class="reference internal" href="#id5" id="id22">10.0+</a></li>
 </ul>
 </li>
 </ul>
 </div>
 <div class="section" id="tour-definition">
-<h2><a class="toc-backref" href="#id14">Tour Definition</a><a class="headerlink" href="#tour-definition" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id6">Tour Definition</a><a class="headerlink" href="#tour-definition" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id1">
-<h3><a class="toc-backref" href="#id15">10.0+</a><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id7">10.0+</a><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="example">
-<h4><a class="toc-backref" href="#id16">Example</a><a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h4>
+<h4><a class="toc-backref" href="#id8">Example</a><a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h4>
 <p>Example from <a class="reference external" href="https://github.com/odoo/odoo/blob/10.0/addons/website_sale/static/src/js/website_sale_tour_buy.js">website_sale</a> module:</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">odoo</span><span class="p">.</span><span class="nx">define</span><span class="p">(</span><span class="s1">&#39;website_sale.tour&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">require</span><span class="p">)</span> <span class="p">{</span>
 <span class="s1">&#39;use strict&#39;</span><span class="p">;</span>
@@ -134,7 +125,7 @@
 </div>
 </div>
 <div class="section" id="options">
-<h4><a class="toc-backref" href="#id17">Options</a><a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h4>
+<h4><a class="toc-backref" href="#id9">Options</a><a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h4>
 <p>Options (second argument of <code class="docutils literal notranslate"><span class="pre">tour.register</span></code>):</p>
 <ul class="simple">
 <li><strong>test</strong> – only for tests</li>
@@ -144,7 +135,7 @@
 </ul>
 </div>
 <div class="section" id="step">
-<h4><a class="toc-backref" href="#id18">Step</a><a class="headerlink" href="#step" title="Permalink to this headline">¶</a></h4>
+<h4><a class="toc-backref" href="#id10">Step</a><a class="headerlink" href="#step" title="Permalink to this headline">¶</a></h4>
 <p>Each step may have following attrubutes:</p>
 <ul class="simple">
 <li><strong>content</strong> – name or title of the step</li>
@@ -166,7 +157,7 @@
 </ul>
 </div>
 <div class="section" id="predefined-steps">
-<h4><a class="toc-backref" href="#id19">Predefined steps</a><a class="headerlink" href="#predefined-steps" title="Permalink to this headline">¶</a></h4>
+<h4><a class="toc-backref" href="#id11">Predefined steps</a><a class="headerlink" href="#predefined-steps" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li><code class="docutils literal notranslate"><span class="pre">tour.STEPS.MENU_MORE</span></code> – clicks on menu <em>More</em> in backend when visible</li>
 <li><code class="docutils literal notranslate"><span class="pre">tour.STEPS.TOGGLE_APPSWITCHER</span></code> – nagivate to Apps page when running in enterprise</li>
@@ -174,7 +165,7 @@
 </ul>
 </div>
 <div class="section" id="more-documentation">
-<h4><a class="toc-backref" href="#id20">More documentation</a><a class="headerlink" href="#more-documentation" title="Permalink to this headline">¶</a></h4>
+<h4><a class="toc-backref" href="#id12">More documentation</a><a class="headerlink" href="#more-documentation" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li><a class="reference external" href="https://www.odoo.com/slides/slide/the-new-way-to-develop-automated-tests-beautiful-tours-440">https://www.odoo.com/slides/slide/the-new-way-to-develop-automated-tests-beautiful-tours-440</a></li>
 <li><a class="reference external" href="https://github.com/odoo/odoo/blob/10.0/addons/web_tour/static/src/js/tour_manager.js">https://github.com/odoo/odoo/blob/10.0/addons/web_tour/static/src/js/tour_manager.js</a></li>
@@ -182,160 +173,18 @@
 </ul>
 </div>
 </div>
-<div class="section" id="id2">
-<h3><a class="toc-backref" href="#id21">8.0, 9.0</a><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="id3">
-<h4><a class="toc-backref" href="#id22">Example</a><a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-    <span class="nx">id</span><span class="o">:</span> <span class="s1">&#39;mails_count_tour&#39;</span><span class="p">,</span>
-    <span class="nx">name</span><span class="o">:</span> <span class="nx">_t</span><span class="p">(</span><span class="s2">&quot;Mails count Tour&quot;</span><span class="p">),</span>
-    <span class="nx">mode</span><span class="o">:</span> <span class="s1">&#39;test&#39;</span><span class="p">,</span>
-    <span class="nx">path</span><span class="o">:</span> <span class="s1">&#39;/web#id=3&amp;model=res.partner&#39;</span><span class="p">,</span>
-    <span class="nx">steps</span><span class="o">:</span> <span class="p">[</span>
-        <span class="p">{</span>
-            <span class="nx">title</span><span class="o">:</span>     <span class="nx">_t</span><span class="p">(</span><span class="s2">&quot;Mails count tutorial&quot;</span><span class="p">),</span>
-            <span class="nx">content</span><span class="o">:</span>   <span class="nx">_t</span><span class="p">(</span><span class="s2">&quot;Let&#39;s see how mails count work.&quot;</span><span class="p">),</span>
-            <span class="nx">popover</span><span class="o">:</span>   <span class="p">{</span> <span class="nx">next</span><span class="o">:</span> <span class="nx">_t</span><span class="p">(</span><span class="s2">&quot;Start Tutorial&quot;</span><span class="p">),</span> <span class="nx">end</span><span class="o">:</span> <span class="nx">_t</span><span class="p">(</span><span class="s2">&quot;Skip&quot;</span><span class="p">)</span> <span class="p">},</span>
-        <span class="p">},</span>
-        <span class="p">{</span>
-            <span class="nx">title</span><span class="o">:</span>     <span class="nx">_t</span><span class="p">(</span><span class="s2">&quot;New fields&quot;</span><span class="p">),</span>
-            <span class="nx">content</span><span class="o">:</span>   <span class="nx">_t</span><span class="p">(</span><span class="s2">&quot;Here is new fields with mails counters. Press one of it.&quot;</span><span class="p">),</span>
-            <span class="nx">element</span><span class="o">:</span>   <span class="s1">&#39;.mails_to&#39;</span><span class="p">,</span>
-        <span class="p">},</span>
-        <span class="p">{</span>
-            <span class="nx">waitNot</span><span class="o">:</span>   <span class="s1">&#39;.mails_to:visible&#39;</span><span class="p">,</span>
-            <span class="nx">title</span><span class="o">:</span>     <span class="nx">_t</span><span class="p">(</span><span class="s2">&quot;Send message from here&quot;</span><span class="p">),</span>
-            <span class="nx">placement</span><span class="o">:</span> <span class="s1">&#39;left&#39;</span><span class="p">,</span>
-            <span class="nx">content</span><span class="o">:</span>   <span class="nx">_t</span><span class="p">(</span><span class="s2">&quot;Now you can see corresponding mails. You can send mail to this partner right from here. Press &lt;em&gt;&#39;Send a mesage&#39;&lt;/em&gt;.&quot;</span><span class="p">),</span>
-            <span class="nx">element</span><span class="o">:</span>   <span class="s1">&#39;.oe_mail_wall .oe_msg.oe_msg_composer_compact&gt;div&gt;.oe_compose_post&#39;</span><span class="p">,</span>
-        <span class="p">},</span>
-    <span class="p">]</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="tour-register">
-<h4><a class="toc-backref" href="#id23">Tour.register</a><a class="headerlink" href="#tour-register" title="Permalink to this headline">¶</a></h4>
-<p>In odoo 8 tour defines this way:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">function</span> <span class="p">()</span> <span class="p">{</span>
-<span class="s1">&#39;use strict&#39;</span><span class="p">;</span>
-<span class="n">var</span> <span class="n">_t</span> <span class="o">=</span> <span class="n">openerp</span><span class="o">.</span><span class="n">_t</span><span class="p">;</span>
-<span class="n">openerp</span><span class="o">.</span><span class="n">Tour</span><span class="o">.</span><span class="n">register</span><span class="p">({</span> <span class="o">...</span>
-</pre></div>
-</div>
-<p>In odoo 9 tour defines that way:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">odoo</span><span class="o">.</span><span class="n">define</span><span class="p">(</span><span class="s1">&#39;account.tour_bank_statement_reconciliation&#39;</span><span class="p">,</span> <span class="n">function</span><span class="p">(</span><span class="n">require</span><span class="p">)</span> <span class="p">{</span>
-<span class="s1">&#39;use strict&#39;</span><span class="p">;</span>
-<span class="n">var</span> <span class="n">core</span> <span class="o">=</span> <span class="n">require</span><span class="p">(</span><span class="s1">&#39;web.core&#39;</span><span class="p">);</span>
-<span class="n">var</span> <span class="n">Tour</span> <span class="o">=</span> <span class="n">require</span><span class="p">(</span><span class="s1">&#39;web.Tour&#39;</span><span class="p">);</span>
-<span class="n">var</span> <span class="n">_t</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">_t</span><span class="p">;</span>
-<span class="n">Tour</span><span class="o">.</span><span class="n">register</span><span class="p">({</span> <span class="o">...</span>
-</pre></div>
-</div>
-<p>Important details:</p>
-<blockquote>
-<div><ul class="simple">
-<li><strong>id</strong> - need to call this tour</li>
-<li><strong>path</strong> - from this path tour will be started in test mode</li>
-</ul>
-</div></blockquote>
-</div>
-<div class="section" id="id4">
-<h4><a class="toc-backref" href="#id24">Step</a><a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h4>
-<p>Next step occurs when <strong>all</strong> conditions are satisfied and popup window will appear near (chose position in <em>placement</em>) element specified in <em>element</em>. Element must contain css selector of corresponding node.
-Conditions may be:</p>
-<blockquote>
-<div><ul class="simple">
-<li><strong>waitFor</strong> - this step will not start if <em>waitFor</em> node absent.</li>
-<li><strong>waitNot</strong> - this step will not start if <em>waitNot</em> node exists.</li>
-<li><strong>wait</strong> - just wait some amount of milliseconds before <strong>next</strong> step.</li>
-<li><strong>element</strong> - similar to <em>waitFor</em>,  but <em>element</em> must be visible</li>
-<li><strong>closed window</strong> - if popup window have close button it must be closed before next step.</li>
-</ul>
-</div></blockquote>
-<p>Opened popup window (from previous step) will close automatically and new window (next step) will be shown.</p>
-<p>Inject JS Tour file on page:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">template</span> <span class="nb">id</span><span class="o">=</span><span class="s2">&quot;res_partner_mails_count_assets_backend&quot;</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;res_partner_mails_count_assets_backend&quot;</span> <span class="n">inherit_id</span><span class="o">=</span><span class="s2">&quot;web.assets_backend&quot;</span><span class="o">&gt;</span>
-    <span class="o">&lt;</span><span class="n">xpath</span> <span class="n">expr</span><span class="o">=</span><span class="s2">&quot;.&quot;</span> <span class="n">position</span><span class="o">=</span><span class="s2">&quot;inside&quot;</span><span class="o">&gt;</span>
-        <span class="o">&lt;</span><span class="n">script</span> <span class="n">src</span><span class="o">=</span><span class="s2">&quot;/res_partner_mails_count/static/src/js/res_partner_mails_count_tour.js&quot;</span> <span class="nb">type</span><span class="o">=</span><span class="s2">&quot;text/javascript&quot;</span><span class="o">&gt;&lt;/</span><span class="n">script</span><span class="o">&gt;</span>
-    <span class="o">&lt;/</span><span class="n">xpath</span><span class="o">&gt;</span>
-<span class="o">&lt;/</span><span class="n">template</span><span class="o">&gt;</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="id5">
-<h4><a class="toc-backref" href="#id25">More documentation</a><a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h4>
-<p>Some docs is here (begin from 10 slide):
-<a class="reference external" href="http://www.slideshare.net/openobject/how-to-develop-automated-tests">http://www.slideshare.net/openobject/how-to-develop-automated-tests</a>
-Also checkout here:
-<a class="reference external" href="https://github.com/odoo/odoo/blob/9.0/addons/web/static/src/js/tour.js">https://github.com/odoo/odoo/blob/9.0/addons/web/static/src/js/tour.js</a></p>
-</div>
-</div>
 </div>
 <div class="section" id="open-backend-menu">
-<h2><a class="toc-backref" href="#id26">Open backend menu</a><a class="headerlink" href="#open-backend-menu" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id6">
-<h3><a class="toc-backref" href="#id27">11.0+</a><a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<h2><a class="toc-backref" href="#id13">Open backend menu</a><a class="headerlink" href="#open-backend-menu" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id2">
+<h3><a class="toc-backref" href="#id14">11.0+</a><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <p><a class="reference external" href="https://github.com/odoo/odoo/commit/7e008469e4e5afe9b4c7151a4738240462359f98">No additional actions are required.</a></p>
-</div>
-<div class="section" id="id7">
-<h3><a class="toc-backref" href="#id28">9.0, 10.0</a><a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
-<p>Some additional actions are required to work with backend menus in tours</p>
-<div class="section" id="manifest">
-<h4><a class="toc-backref" href="#id29">Manifest</a><a class="headerlink" href="#manifest" title="Permalink to this headline">¶</a></h4>
-<p>Add <code class="docutils literal notranslate"><span class="pre">web_tour</span></code> to dependencies</p>
-<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;depends&quot;</span><span class="p">:</span> <span class="p">[</span>
-    <span class="s2">&quot;web_tour&quot;</span><span class="p">,</span>
-<span class="p">],</span>
-<span class="c1"># ...</span>
-<span class="s2">&quot;demo&quot;</span><span class="p">:</span> <span class="p">[</span>
-    <span class="s2">&quot;views/assets_demo.xml&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;views/tour_views.xml&quot;</span><span class="p">,</span>
-<span class="p">],</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="load-xmlid">
-<h4><a class="toc-backref" href="#id30">load_xmlid</a><a class="headerlink" href="#load-xmlid" title="Permalink to this headline">¶</a></h4>
-<p>You need to set <code class="docutils literal notranslate"><span class="pre">load_xmlid</span></code> for <em>each</em> menu you need to open. Recommended
-name for the file is <code class="docutils literal notranslate"><span class="pre">tour_views.xml</span></code></p>
-<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
-<span class="nt">&lt;odoo&gt;</span>
-    <span class="c">&lt;!-- Make the xmlid of menus required by the tour available in webclient --&gt;</span>
-    <span class="nt">&lt;record</span> <span class="na">id=</span><span class="s">&quot;base.menu_administration&quot;</span> <span class="na">model=</span><span class="s">&quot;ir.ui.menu&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;load_xmlid&quot;</span> <span class="na">eval=</span><span class="s">&quot;True&quot;</span><span class="nt">/&gt;</span>
-    <span class="nt">&lt;/record&gt;</span>
-<span class="nt">&lt;/odoo&gt;</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="tour">
-<h4><a class="toc-backref" href="#id31">Tour</a><a class="headerlink" href="#tour" title="Permalink to this headline">¶</a></h4>
-<p>Use <em>trigger</em> selector for both editions:</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-    <span class="nx">trigger</span><span class="o">:</span> <span class="s1">&#39;.o_app[data-menu-xmlid=&quot;base.menu_administration&quot;], .oe_menu_toggler[data-menu-xmlid=&quot;base.menu_administration&quot;]&#39;</span><span class="p">,</span>
-    <span class="nx">content</span><span class="o">:</span> <span class="nx">_t</span><span class="p">(</span><span class="s2">&quot;Configuration options are available in the Settings app.&quot;</span><span class="p">),</span>
-    <span class="nx">position</span><span class="o">:</span> <span class="s2">&quot;bottom&quot;</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="section" id="id8">
-<h3><a class="toc-backref" href="#id32">8.0</a><a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
-<p>The only way to open menu is search by string, for example</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-    <span class="nx">title</span><span class="o">:</span>     <span class="s2">&quot;go to accounting&quot;</span><span class="p">,</span>
-    <span class="nx">element</span><span class="o">:</span>   <span class="s1">&#39;.oe_menu_toggler:contains(&quot;Accounting&quot;):visible&#39;</span><span class="p">,</span>
-<span class="p">},</span>
-</pre></div>
-</div>
 </div>
 </div>
 <div class="section" id="manual-launching">
-<h2><a class="toc-backref" href="#id33">Manual launching</a><a class="headerlink" href="#manual-launching" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id9">
-<h3><a class="toc-backref" href="#id34">10.0+</a><a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<h2><a class="toc-backref" href="#id15">Manual launching</a><a class="headerlink" href="#manual-launching" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id3">
+<h3><a class="toc-backref" href="#id16">10.0+</a><a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><span class="xref std std-doc">activate developer mode</span>.</li>
 <li>Click <em>Bug</em> icon (between chat <em>icon</em> and <em>Username</em> at top right-hand corner)<ul>
@@ -355,48 +204,55 @@ name for the file is <code class="docutils literal notranslate"><span class="pre
 </li>
 </ul>
 </div>
-<div class="section" id="id10">
-<h3><a class="toc-backref" href="#id35">8.0, 9.0</a><a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
-<p>You can launch tour by url of following format:</p>
-<p><code class="docutils literal notranslate"><span class="pre">/web#/tutorial.mails_count_tour=true</span></code></p>
-<p>where <em>mails_count_tour</em>  is id of your tour.</p>
-</div>
 </div>
 <div class="section" id="auto-launch-after-installation">
-<span id="id11"></span><h2><a class="toc-backref" href="#id36">Auto Launch after installation</a><a class="headerlink" href="#auto-launch-after-installation" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id12">
-<h3><a class="toc-backref" href="#id37">10.0+</a><a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
+<h2><a class="toc-backref" href="#id17">Auto Launch after installation</a><a class="headerlink" href="#auto-launch-after-installation" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id4">
+<h3><a class="toc-backref" href="#id18">9.0, 10.0</a><a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p>Some additional actions are required to work with backend menus in tours</p>
+<div class="section" id="manifest">
+<h4><a class="toc-backref" href="#id19">Manifest</a><a class="headerlink" href="#manifest" title="Permalink to this headline">¶</a></h4>
+<p>Add <code class="docutils literal notranslate"><span class="pre">web_tour</span></code> to dependencies</p>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;depends&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="s2">&quot;web_tour&quot;</span><span class="p">,</span>
+<span class="p">],</span>
+<span class="c1"># ...</span>
+<span class="s2">&quot;demo&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="s2">&quot;views/assets_demo.xml&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;views/tour_views.xml&quot;</span><span class="p">,</span>
+<span class="p">],</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="load-xmlid">
+<h4><a class="toc-backref" href="#id20">load_xmlid</a><a class="headerlink" href="#load-xmlid" title="Permalink to this headline">¶</a></h4>
+<p>You need to set <code class="docutils literal notranslate"><span class="pre">load_xmlid</span></code> for <em>each</em> menu you need to open. Recommended
+name for the file is <code class="docutils literal notranslate"><span class="pre">tour_views.xml</span></code></p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<span class="nt">&lt;odoo&gt;</span>
+    <span class="c">&lt;!-- Make the xmlid of menus required by the tour available in webclient --&gt;</span>
+    <span class="nt">&lt;record</span> <span class="na">id=</span><span class="s">&quot;base.menu_administration&quot;</span> <span class="na">model=</span><span class="s">&quot;ir.ui.menu&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;load_xmlid&quot;</span> <span class="na">eval=</span><span class="s">&quot;True&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/record&gt;</span>
+<span class="nt">&lt;/odoo&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="tour">
+<h4><a class="toc-backref" href="#id21">Tour</a><a class="headerlink" href="#tour" title="Permalink to this headline">¶</a></h4>
+<p>Use <em>trigger</em> selector for both editions:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="nx">trigger</span><span class="o">:</span> <span class="s1">&#39;.o_app[data-menu-xmlid=&quot;base.menu_administration&quot;], .oe_menu_toggler[data-menu-xmlid=&quot;base.menu_administration&quot;]&#39;</span><span class="p">,</span>
+    <span class="nx">content</span><span class="o">:</span> <span class="nx">_t</span><span class="p">(</span><span class="s2">&quot;Configuration options are available in the Settings app.&quot;</span><span class="p">),</span>
+    <span class="nx">position</span><span class="o">:</span> <span class="s2">&quot;bottom&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id5">
+<h3><a class="toc-backref" href="#id22">10.0+</a><a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
 <p>TODO</p>
-</div>
-<div class="section" id="id13">
-<h3><a class="toc-backref" href="#id38">8.0, 9.0</a><a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
-<p>To run tour after module installation do next steps.</p>
-<blockquote>
-<div><ul class="simple">
-<li>Create <em>ToDo</em></li>
-<li>Create <em>Action</em></li>
-</ul>
-</div></blockquote>
-<p>ToDo is some queued web actions that may call <em>Action</em> like this:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">record</span> <span class="nb">id</span><span class="o">=</span><span class="s2">&quot;base.open_menu&quot;</span> <span class="n">model</span><span class="o">=</span><span class="s2">&quot;ir.actions.todo&quot;</span><span class="o">&gt;</span>
-    <span class="o">&lt;</span><span class="n">field</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;action_id&quot;</span> <span class="n">ref</span><span class="o">=</span><span class="s2">&quot;action_website_tutorial&quot;</span><span class="o">/&gt;</span>
-    <span class="o">&lt;</span><span class="n">field</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;state&quot;</span><span class="o">&gt;</span><span class="nb">open</span><span class="o">&lt;/</span><span class="n">field</span><span class="o">&gt;</span>
-<span class="o">&lt;/</span><span class="n">record</span><span class="o">&gt;</span>
-</pre></div>
-</div>
-<p>Action is like this:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">record</span> <span class="nb">id</span><span class="o">=</span><span class="s2">&quot;res_partner_mails_count_tutorial&quot;</span> <span class="n">model</span><span class="o">=</span><span class="s2">&quot;ir.actions.act_url&quot;</span><span class="o">&gt;</span>
-    <span class="o">&lt;</span><span class="n">field</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;name&quot;</span><span class="o">&gt;</span><span class="n">res_partner_mails_count</span> <span class="n">Tutorial</span><span class="o">&lt;/</span><span class="n">field</span><span class="o">&gt;</span>
-    <span class="o">&lt;</span><span class="n">field</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;url&quot;</span><span class="o">&gt;/</span><span class="n">web</span><span class="c1">#id=3&amp;amp;model=res.partner&amp;amp;/#tutorial_extra.mails_count_tour=true&lt;/field&gt;</span>
-    <span class="o">&lt;</span><span class="n">field</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;target&quot;</span><span class="o">&gt;</span><span class="bp">self</span><span class="o">&lt;/</span><span class="n">field</span><span class="o">&gt;</span>
-<span class="o">&lt;/</span><span class="n">record</span><span class="o">&gt;</span>
-</pre></div>
-</div>
-<p>Here tutorial_extra.**mails_count_tour** is tour id.</p>
-<p>Use eval to compute some python code if needed:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">field</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;url&quot;</span> <span class="nb">eval</span><span class="o">=</span><span class="s2">&quot;&#39;/web?debug=1&amp;amp;res_partner_mails_count=tutorial#id=&#39;+str(ref(&#39;base.partner_root&#39;))+&#39;&amp;amp;view_type=form&amp;amp;model=res.partner&amp;amp;/#tutorial_extra.mails_count_tour=true&#39;&quot;</span><span class="o">/&gt;</span>
-</pre></div>
-</div>
 </div>
 </div>
 </div>
@@ -429,12 +285,26 @@ name for the file is <code class="docutils literal notranslate"><span class="pre
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="qa/index.html">Quality assurance</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">JS Tour</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#tour-definition">Tour Definition</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#open-backend-menu">Open backend menu</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#manual-launching">Manual launching</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#auto-launch-after-installation">Auto Launch after installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tour-definition">Tour Definition</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">10.0+</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#open-backend-menu">Open backend menu</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">11.0+</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#manual-launching">Manual launching</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id3">10.0+</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#auto-launch-after-installation">Auto Launch after installation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id4">9.0, 10.0</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">10.0+</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="older-versions/index.html">Older versions</a></li>
 </ul>
 
 <div class="relations">
@@ -442,6 +312,7 @@ name for the file is <code class="docutils literal notranslate"><span class="pre
 <ul>
   <li><a href="index.html">Documentation overview</a><ul>
       <li>Previous: <a href="qa/paypal.html" title="previous chapter">Paypal testing</a></li>
+      <li>Next: <a href="older-versions/index.html" title="next chapter">Older versions</a></li>
   </ul></li>
 </ul>
 </div>
@@ -476,7 +347,7 @@ name for the file is <code class="docutils literal notranslate"><span class="pre
 
       
       |
-      <a href="_sources/js_tour.rst.txt"
+      <a href="_sources/js-tour.rst.txt"
           rel="nofollow">Page source</a>
     </div>
 
