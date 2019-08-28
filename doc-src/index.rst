@@ -12,4 +12,4 @@ Welcome to odoo-test.sh's documentation!
 
    qa/index
    js-tour
-   old-ver/index
+   old-odoo-versions/index
