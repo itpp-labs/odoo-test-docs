@@ -20,7 +20,7 @@ Source of the https://odoo-test.sh website
 
 ## Contribution
 
-* Edit files in the repo. Check documentations:
+* Edit files in ``doc-src`` folder. Check documentations:
 
   * http://www.sphinx-doc.org/en/stable/rest.html
   * http://www.sphinx-doc.org/en/stable/domains.html
