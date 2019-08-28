@@ -127,7 +127,7 @@ Manual launching
 10.0+
 -----
 
-* :doc:`activate developer mode <https://odoo-development.readthedocs.io/en/latest/odoo/usage/debug-mode.html?highlight=developer%20mode>`.
+* `activate developer mode <https://odoo-development.readthedocs.io/en/latest/odoo/usage/debug-mode.html>`__.
 * Click *Bug* icon (between chat *icon* and *Username* at top right-hand corner)
 
   * click ``Start tour``
