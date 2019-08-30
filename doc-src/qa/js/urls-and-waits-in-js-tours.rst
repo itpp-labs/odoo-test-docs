@@ -2,14 +2,13 @@
  How js tour works via phantomjs
 =================================
 
-
 The order is as following:
 
 * OPEN *url_path* from **python** :doc:`phantom_js <phantom_js>` method
 * WAIT *ready* condition (Truthy or Falsy) from **python** :doc:`phantom_js <phantom_js>` method
-* OPEN *url* from :doc:`tour <../../description/js_tour>`'s options in **js** file 
-* WAIT *wait_for* (deferred object) from :doc:`tour <../../description/js_tour>`'s options in **js** file
-* DO first step from **js** :doc:`tour <../../description/js_tour>`
+* OPEN *url* from :doc:`tour <../../js-tour>`'s options in **js** file
+* WAIT *wait_for* (deferred object) from :doc:`tour <../../js-tour>`'s options in **js** file
+* DO first step from **js** :doc:`tour <../../js-tour>`
 
   * WAIT when *trigger* becomes visible
   * WAIT when *extra_trigger*  becomes visible (if *extra_trigger* is presented)

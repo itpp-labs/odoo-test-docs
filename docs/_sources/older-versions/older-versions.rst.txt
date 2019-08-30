@@ -1,0 +1,24 @@
+================
+ Older versions
+================
+
+Odoo 8
+======
+
+.. toctree::
+   :maxdepth: 4
+
+   8/auto-launch
+   8/backend
+   8/definition
+   8/manual-launch
+
+Odoo 9
+======
+
+.. toctree::
+   :maxdepth: 3
+
+   9/auto-launch
+   9/definition
+   9/manual-launch
