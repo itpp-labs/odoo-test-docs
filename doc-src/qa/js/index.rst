@@ -9,7 +9,7 @@ For automatic web tests odoo uses `phantomjs <http://phantomjs.org>`_.
 * Follow instruction for :doc:`python tests <../python/index>`
 * If you have to make several steps in UI to test something:
 
-  * Create :doc:`tour <../js-tour>`
+  * Create :doc:`tour <../../js-tour>`
   * :doc:`Run tour via self.phantom_js() <tests-via-tours>`
 
 * If just one step is enough:
