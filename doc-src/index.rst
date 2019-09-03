@@ -10,6 +10,7 @@ Welcome to odoo-test.sh's documentation!
    :maxdepth: 3
    :caption: Contents:
 
-   qa/index
+   unittests/index
+   quality-assurance-tools/index
    js-tour
    old-odoo-versions/index
