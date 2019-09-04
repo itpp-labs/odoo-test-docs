@@ -16,7 +16,7 @@
     <script type="text/javascript" src="_static/language_data.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Quality assurance" href="qa/index.html" />
+    <link rel="next" title="Unit tests" href="unittests/index.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   
@@ -38,22 +38,45 @@
 <div class="toctree-wrapper compound">
 <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="qa/index.html">Quality assurance</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="qa/index.html#test-automation">Test automation</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="qa/python/index.html">Python Autotests</a></li>
-<li class="toctree-l3"><a class="reference internal" href="qa/js/index.html">JS Autotests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="unittests/index.html">Unit tests</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="unittests/python/index.html">Python Autotests</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="unittests/python/test-enable.html">How to run tests</a></li>
+<li class="toctree-l3"><a class="reference internal" href="unittests/python/unittest.html">Odoo unittest</a></li>
+<li class="toctree-l3"><a class="reference internal" href="unittests/python/at_install-post_install.html">at_install, post_install</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="qa/index.html#manual-testing">Manual testing</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="qa/slow-internet-emulation.html">Emulation of slow internet connections in browser</a></li>
-<li class="toctree-l3"><a class="reference internal" href="qa/barcode-scanning-emulation.html">Emulation barcode</a></li>
-<li class="toctree-l3"><a class="reference internal" href="qa/escpos-printer-emulation.html">ESC/POS printer emulation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="qa/paypal.html">Paypal testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="unittests/js/index.html">JS Autotests</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="unittests/js/phantom_js.html">self.phantom_js()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="unittests/js/tests-via-tours.html">JS tests via Tours</a></li>
+<li class="toctree-l3"><a class="reference internal" href="unittests/js/urls-and-waits-in-js-tours.html">How js tour works via phantomjs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="unittests/js/phantom_js-test_cr.html">Phantom_js + python tests</a></li>
+<li class="toctree-l3"><a class="reference internal" href="unittests/js/phantomjs-screenshots.html">Screenshots in PhantomJS tests</a></li>
+<li class="toctree-l3"><a class="reference internal" href="unittests/js/unittest-longpolling.html">Longpolling in unit tests</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="js-tour.html">JS Tour</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="quality-assurance-tools/index.html">Quality assurance tools</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="quality-assurance-tools/slow-internet-emulation.html">Emulation of slow internet connections in browser</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="quality-assurance-tools/slow-internet-emulation.html#emulation-of-package-lossing">Emulation of package lossing</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="quality-assurance-tools/barcode-scanning-emulation.html">Emulation barcode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quality-assurance-tools/escpos-printer-emulation.html">ESC/POS printer emulation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="quality-assurance-tools/escpos-printer-emulation.html#hw-escpos">hw_escpos</a></li>
+<li class="toctree-l3"><a class="reference internal" href="quality-assurance-tools/escpos-printer-emulation.html#pos">POS</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="quality-assurance-tools/paypal.html">Paypal testing</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="quality-assurance-tools/paypal.html#create-developer-account">Create developer account</a></li>
+<li class="toctree-l3"><a class="reference internal" href="quality-assurance-tools/paypal.html#add-seller-and-buyer">Add seller and buyer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="quality-assurance-tools/paypal.html#configure-odoo">Configure odoo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="quality-assurance-tools/paypal.html#directly-testing">Directly testing</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="js-tour.html">JS tour</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="js-tour.html#tour-definition">Tour Definition</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="js-tour.html#id1">10.0+</a></li>
 </ul>
@@ -116,8 +139,9 @@
 <h3>Navigation</h3>
 <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="qa/index.html">Quality assurance</a></li>
-<li class="toctree-l1"><a class="reference internal" href="js-tour.html">JS Tour</a></li>
+<li class="toctree-l1"><a class="reference internal" href="unittests/index.html">Unit tests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quality-assurance-tools/index.html">Quality assurance tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="js-tour.html">JS tour</a></li>
 <li class="toctree-l1"><a class="reference internal" href="old-odoo-versions/index.html">Documentation archive</a></li>
 </ul>
 
@@ -125,7 +149,7 @@
 <h3>Related Topics</h3>
 <ul>
   <li><a href="#">Documentation overview</a><ul>
-      <li>Next: <a href="qa/index.html" title="next chapter">Quality assurance</a></li>
+      <li>Next: <a href="unittests/index.html" title="next chapter">Unit tests</a></li>
   </ul></li>
 </ul>
 </div>

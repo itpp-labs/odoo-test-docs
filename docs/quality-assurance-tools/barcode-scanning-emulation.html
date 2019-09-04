@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Documentation archive &#8212; odoo-test.sh  documentation</title>
+    <title>Emulation barcode &#8212; odoo-test.sh  documentation</title>
     <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
@@ -16,8 +16,8 @@
     <script type="text/javascript" src="../_static/language_data.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Tour Definition" href="js-tour-odoo-8-9/definition.html" />
-    <link rel="prev" title="JS tour" href="../js-tour.html" />
+    <link rel="next" title="ESC/POS printer emulation" href="escpos-printer-emulation.html" />
+    <link rel="prev" title="Emulation of slow internet connections in browser" href="slow-internet-emulation.html" />
    
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
   
@@ -34,22 +34,23 @@
 
           <div class="body" role="main">
             
-  <div class="section" id="documentation-archive">
-<h1>Documentation archive<a class="headerlink" href="#documentation-archive" title="Permalink to this headline">¶</a></h1>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="js-tour-odoo-8-9/definition.html">Tour Definition</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="js-tour-odoo-8-9/definition.html#example">Example</a></li>
-<li class="toctree-l2"><a class="reference internal" href="js-tour-odoo-8-9/definition.html#tour-register">Tour.register</a></li>
-<li class="toctree-l2"><a class="reference internal" href="js-tour-odoo-8-9/definition.html#step">Step</a></li>
-<li class="toctree-l2"><a class="reference internal" href="js-tour-odoo-8-9/definition.html#more-documentation">More documentation</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="js-tour-odoo-8-9/backend.html">Open backend menu</a></li>
-<li class="toctree-l1"><a class="reference internal" href="js-tour-odoo-8-9/manual-launch.html">Manual Launching</a></li>
-<li class="toctree-l1"><a class="reference internal" href="js-tour-odoo-8-9/auto-launch.html">Auto Launch after installation</a></li>
-</ul>
+  <div class="section" id="emulation-barcode">
+<h1>Emulation barcode<a class="headerlink" href="#emulation-barcode" title="Permalink to this headline">¶</a></h1>
+<p>Barcode scanner connected with computer work as keyboard. E.g. after scanning send sequence of symbols as if fast typing on the keyboard.</p>
+<p>Install <strong>xdotool</strong> app if you haven’t it yet.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>sudo apt-get install xdotool
+</pre></div>
 </div>
+<p>Emulation scanning barcode:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>sleep <span class="m">3</span> <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s1">&#39;1234567890128&#39;</span> <span class="p">|</span> grep -o . <span class="p">|</span> xargs xdotool key <span class="o">&amp;&amp;</span> xargs xdotool key <span class="se">\n</span> <span class="p">&amp;</span>
+</pre></div>
+</div>
+<p>or so:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>sleep <span class="m">3</span> <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s1">&#39;3333333333338&#39;</span> <span class="p">|</span> grep -o . <span class="p">|</span> xargs xdotool key <span class="o">&amp;&amp;</span> xargs xdotool key <span class="se">\n</span> <span class="p">&amp;</span>
+</pre></div>
+</div>
+<p>Where: 3 - sleep seconds; 3333333333338 - barcode.</p>
+<p>After successfully scanning you will see ‘3333333333338’ in the command line. If toggle to other window that symbols appear in the input field in the this window. So we can send sequence in the app as if we scanning it.</p>
 </div>
 
 
@@ -79,23 +80,25 @@
 <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../unittests/index.html">Unit tests</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../quality-assurance-tools/index.html">Quality assurance tools</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../js-tour.html">JS tour</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Documentation archive</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="js-tour-odoo-8-9/definition.html">Tour Definition</a></li>
-<li class="toctree-l2"><a class="reference internal" href="js-tour-odoo-8-9/backend.html">Open backend menu</a></li>
-<li class="toctree-l2"><a class="reference internal" href="js-tour-odoo-8-9/manual-launch.html">Manual Launching</a></li>
-<li class="toctree-l2"><a class="reference internal" href="js-tour-odoo-8-9/auto-launch.html">Auto Launch after installation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Quality assurance tools</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="slow-internet-emulation.html">Emulation of slow internet connections in browser</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Emulation barcode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="escpos-printer-emulation.html">ESC/POS printer emulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paypal.html">Paypal testing</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../js-tour.html">JS tour</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../old-odoo-versions/index.html">Documentation archive</a></li>
 </ul>
 
 <div class="relations">
 <h3>Related Topics</h3>
 <ul>
   <li><a href="../index.html">Documentation overview</a><ul>
-      <li>Previous: <a href="../js-tour.html" title="previous chapter">JS tour</a></li>
-      <li>Next: <a href="js-tour-odoo-8-9/definition.html" title="next chapter">Tour Definition</a></li>
+  <li><a href="index.html">Quality assurance tools</a><ul>
+      <li>Previous: <a href="slow-internet-emulation.html" title="previous chapter">Emulation of slow internet connections in browser</a></li>
+      <li>Next: <a href="escpos-printer-emulation.html" title="next chapter">ESC/POS printer emulation</a></li>
+  </ul></li>
   </ul></li>
 </ul>
 </div>
@@ -130,7 +133,7 @@
 
       
       |
-      <a href="../_sources/old-odoo-versions/index.rst.txt"
+      <a href="../_sources/quality-assurance-tools/barcode-scanning-emulation.rst.txt"
           rel="nofollow">Page source</a>
     </div>
 
