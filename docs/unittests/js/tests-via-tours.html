@@ -1,0 +1,183 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>JS tests via Tours &#8212; odoo-test.sh  documentation</title>
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="How js tour works via phantomjs" href="urls-and-waits-in-js-tours.html" />
+    <link rel="prev" title="self.phantom_js()" href="phantom_js.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="js-tests-via-tours">
+<h1>JS tests via Tours<a class="headerlink" href="#js-tests-via-tours" title="Permalink to this headline">¶</a></h1>
+<p>How to run <a class="reference internal" href="../../js-tour.html"><span class="doc">odoo tours</span></a> in <a class="reference internal" href="phantom_js.html"><span class="doc">phantom_js</span></a> method?</p>
+<div class="section" id="id1">
+<h2>10.0+<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">odoo.tests.common</span> <span class="kn">import</span> <span class="n">HttpCase</span>
+
+<span class="k">class</span> <span class="nc">CLASS_NAME</span><span class="p">(</span><span class="n">HttpCase</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">test_NAME</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+        <span class="n">tour</span> <span class="o">=</span> <span class="s1">&#39;TOUR_NAME&#39;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">phantom_js</span><span class="p">(</span>
+            <span class="n">URL_PATH</span><span class="p">,</span>
+
+            <span class="s2">&quot;odoo.__DEBUG__.services[&#39;web_tour.tour&#39;]&quot;</span>
+            <span class="s2">&quot;.run(&#39;</span><span class="si">%s</span><span class="s2">&#39;)&quot;</span> <span class="o">%</span> <span class="n">tour</span><span class="p">,</span>
+
+            <span class="s2">&quot;odoo.__DEBUG__.services[&#39;web_tour.tour&#39;]&quot;</span>
+            <span class="s2">&quot;.tours[&#39;</span><span class="si">%s</span><span class="s2">&#39;].ready&quot;</span> <span class="o">%</span> <span class="n">tour</span><span class="p">,</span>
+
+            <span class="n">login</span><span class="o">=</span><span class="n">LOGIN_OR_NONE</span>
+        <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id2">
+<h2>8.0, 9.0<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">CLASS_NAME</span><span class="p">(</span><span class="o">...</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">test_NAME</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">phantom_js</span><span class="p">(</span>
+            <span class="n">URL_PATH</span><span class="p">,</span>
+
+            <span class="s2">&quot;odoo.__DEBUG__.services[&#39;web.Tour&#39;]&quot;</span>
+            <span class="s2">&quot;.run(&#39;TOUR_NAME&#39;, &#39;test&#39;)&quot;</span><span class="p">,</span>
+
+            <span class="s2">&quot;odoo.__DEBUG__.services[&#39;web.Tour&#39;]&quot;</span>
+            <span class="s2">&quot;.tours.TOUR_NAME&quot;</span><span class="p">,</span>
+
+            <span class="n">login</span><span class="o">=</span><span class="n">LOGIN_OR_NONE</span>
+        <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html">odoo-test.sh</a></h1>
+
+
+
+
+
+
+<p>
+<iframe src="https://ghbtns.com/github-btn.html?user=it-projects-llc&repo=odoo-test&type=watch&count=true&size=large&v=2"
+  allowtransparency="true" frameborder="0" scrolling="0" width="200px" height="35px"></iframe>
+</p>
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Unit tests</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../python/index.html">Python Autotests</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">JS Autotests</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="phantom_js.html">self.phantom_js()</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">JS tests via Tours</a></li>
+<li class="toctree-l3"><a class="reference internal" href="urls-and-waits-in-js-tours.html">How js tour works via phantomjs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="phantom_js-test_cr.html">Phantom_js + python tests</a></li>
+<li class="toctree-l3"><a class="reference internal" href="phantomjs-screenshots.html">Screenshots in PhantomJS tests</a></li>
+<li class="toctree-l3"><a class="reference internal" href="unittest-longpolling.html">Longpolling in unit tests</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../quality-assurance-tools/index.html">Quality assurance tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../js-tour.html">JS tour</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../old-odoo-versions/index.html">Documentation archive</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  <li><a href="../index.html">Unit tests</a><ul>
+  <li><a href="index.html">JS Autotests</a><ul>
+      <li>Previous: <a href="phantom_js.html" title="previous chapter">self.phantom_js()</a></li>
+      <li>Next: <a href="urls-and-waits-in-js-tours.html" title="next chapter">How js tour works via phantomjs</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2019, IT-Projects LLC.
+
+       | <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="nofollow">License: CC BY-NC-SA 4.0</a>
+
+      
+      |
+      <a href="../../_sources/unittests/js/tests-via-tours.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+    <a href="https://github.com/it-projects-llc/odoo-test" class="github">
+        <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"  class="github"/>
+    </a>
+    
+
+    
+  </body>
+</html>
