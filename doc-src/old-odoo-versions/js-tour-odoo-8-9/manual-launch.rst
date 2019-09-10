@@ -2,6 +2,9 @@
  Manual Launching
 ==================
 
+8.0, 9.0
+--------
+
 You can launch tour by url of following format:
 
 ``/web#/tutorial.mails_count_tour=true``
