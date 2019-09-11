@@ -26,4 +26,6 @@ jobs:
         user-email: itpp-bot@it-projects.info
         message: |
           :alien: recompile docs
+          
+          Sent from Github Actions (see .github/workflows/main.yml )
         github-token: ${{ secrets.GITHUB_TOKEN }}
