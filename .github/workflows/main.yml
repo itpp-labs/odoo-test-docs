@@ -1,0 +1,28 @@
+name: CI
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v1
+    - name: Set up Python 3.7
+      uses: actions/setup-python@v1
+      with:
+        python-version: 3.7
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - name: Rebuild
+      run: cd doc-src && make github
+    - uses: matheusalbino/git-commit@v1.0.0
+      name: Commit updates
+      with:
+        user-name: Mitchell Admin (from Github Actions)
+        user-email: itpp-bot@it-projects.info
+        message: ":alien: recompile docs"
+        github-token: ${{ secrets.GITHUB_TOKEN }}
