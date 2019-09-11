@@ -3,8 +3,8 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Odoo Testing framework docs
-===========================
+Documentation for Odoo testing framework
+========================================
 
 .. toctree::
    :maxdepth: 3
