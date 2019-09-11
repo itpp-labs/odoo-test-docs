@@ -25,7 +25,5 @@ jobs:
         user-name: Mitchell Admin (from Github Actions)
         user-email: itpp-bot@it-projects.info
         message: |
-          :alien: recompile docs
-          
-          Sent from Github Actions (see .github/workflows/main.yml )
+          :alien: recompile docs\n\nSent from Github Actions (see .github/workflows/main.yml )
         github-token: ${{ secrets.GITHUB_TOKEN }}
