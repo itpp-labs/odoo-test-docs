@@ -24,6 +24,6 @@ jobs:
       with:
         user-name: Mitchell Admin (from Github Actions)
         user-email: itpp-bot@it-projects.info
-        message: 
+        message: |
           :alien: recompile docs
         github-token: ${{ secrets.GITHUB_TOKEN }}
