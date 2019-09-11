@@ -1,11 +1,9 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
     <title>self.phantom_js() &#8212; odoo-test.sh  documentation</title>
     <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -53,13 +51,14 @@
 </div>
 <p>i.e.</p>
 <ul class="simple">
-<li>odoo first loads <code class="docutils literal notranslate"><span class="pre">url_path</span></code> as user <code class="docutils literal notranslate"><span class="pre">login</span></code> (e.g. <code class="docutils literal notranslate"><span class="pre">'admin'</span></code>, <code class="docutils literal notranslate"><span class="pre">'demo'</span></code> etc.) or as non-authed user</li>
-<li>then waits for <code class="docutils literal notranslate"><span class="pre">ready</span></code> condition, i.e. when some js variable (e.g. <code class="docutils literal notranslate"><span class="pre">window</span></code>) become <a class="reference external" href="https://developer.mozilla.org/en-US/docs/Glossary/Truthy">truthy</a></li>
-<li>then executes js <code class="docutils literal notranslate"><span class="pre">code</span></code></li>
-<li>then wait for one of condition:<ul>
-<li>someone prints <code class="docutils literal notranslate"><span class="pre">console.log('ok')</span></code> – test passed</li>
-<li>someone prints <code class="docutils literal notranslate"><span class="pre">console.log('error')</span></code> – test failed</li>
-<li><code class="docutils literal notranslate"><span class="pre">timeout</span></code> seconds are passed – test failed</li>
+<li><p>odoo first loads <code class="docutils literal notranslate"><span class="pre">url_path</span></code> as user <code class="docutils literal notranslate"><span class="pre">login</span></code> (e.g. <code class="docutils literal notranslate"><span class="pre">'admin'</span></code>, <code class="docutils literal notranslate"><span class="pre">'demo'</span></code> etc.) or as non-authed user</p></li>
+<li><p>then waits for <code class="docutils literal notranslate"><span class="pre">ready</span></code> condition, i.e. when some js variable (e.g. <code class="docutils literal notranslate"><span class="pre">window</span></code>) become <a class="reference external" href="https://developer.mozilla.org/en-US/docs/Glossary/Truthy">truthy</a></p></li>
+<li><p>then executes js <code class="docutils literal notranslate"><span class="pre">code</span></code></p></li>
+<li><p>then wait for one of condition:</p>
+<ul>
+<li><p>someone prints <code class="docutils literal notranslate"><span class="pre">console.log('ok')</span></code> – test passed</p></li>
+<li><p>someone prints <code class="docutils literal notranslate"><span class="pre">console.log('error')</span></code> – test failed</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">timeout</span></code> seconds are passed – test failed</p></li>
 </ul>
 </li>
 </ul>
@@ -88,15 +87,14 @@
 </div>
 <p>In this test:</p>
 <ul>
-<li><p class="first">odoo first loads <code class="docutils literal notranslate"><span class="pre">/web#action=...</span></code> page</p>
-</li>
-<li><p class="first">then waits for <code class="docutils literal notranslate"><span class="pre">odoo.__DEBUG__.services['mail_sent.sent'].is_ready</span></code></p>
+<li><p>odoo first loads <code class="docutils literal notranslate"><span class="pre">/web#action=...</span></code> page</p></li>
+<li><p>then waits for <code class="docutils literal notranslate"><span class="pre">odoo.__DEBUG__.services['mail_sent.sent'].is_ready</span></code></p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">odoo.__DEBUG__.services['mail_sent.sent']</span></code> is similar to <code class="docutils literal notranslate"><span class="pre">require('mail_sent.sent')</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">is_ready</span></code> is a variable in <a class="reference external" href="https://github.com/it-projects-llc/mail-addons/blob/10.0/mail_sent/static/src/js/sent.js">sent.js</a></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">odoo.__DEBUG__.services['mail_sent.sent']</span></code> is similar to <code class="docutils literal notranslate"><span class="pre">require('mail_sent.sent')</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">is_ready</span></code> is a variable in <a class="reference external" href="https://github.com/it-projects-llc/mail-addons/blob/10.0/mail_sent/static/src/js/sent.js">sent.js</a></p></li>
 </ul>
 </li>
-<li><p class="first">then executes js <code class="docutils literal notranslate"><span class="pre">code</span></code>:</p>
+<li><p>then executes js <code class="docutils literal notranslate"><span class="pre">code</span></code>:</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
     <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;.mail_sent&quot;</span><span class="p">).</span><span class="nx">click</span><span class="p">();</span>
     <span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;ok&#39;</span><span class="p">);},</span> <span class="mi">3000</span><span class="p">);</span>
@@ -106,8 +104,7 @@
 <p>which clicks on <code class="docutils literal notranslate"><span class="pre">Sent</span></code> menu and gives to the page 3 seconds to load it.</p>
 <p>This code neither throws errors (e.g. via <code class="docutils literal notranslate"><span class="pre">throw</span> <span class="pre">new</span> <span class="pre">Error('Some</span> <span class="pre">error</span> <span class="pre">description')</span></code> nor log <code class="docutils literal notranslate"><span class="pre">console.log('error')</span></code>, but you can add ones to your code to catch failed cases you need.</p>
 </li>
-<li><p class="first">then if everything is ok, odoo get message <code class="docutils literal notranslate"><span class="pre">console.log('ok')</span></code></p>
-</li>
+<li><p>then if everything is ok, odoo get message <code class="docutils literal notranslate"><span class="pre">console.log('ok')</span></code></p></li>
 </ul>
 </div>
 </div>
@@ -170,13 +167,11 @@
 </ul>
 </div>
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../../search.html" method="get">
-      <input type="text" name="q" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
       <input type="submit" value="Go" />
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
     </form>
     </div>
 </div>

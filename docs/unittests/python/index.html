@@ -1,11 +1,9 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
     <title>Python Autotests &#8212; odoo-test.sh  documentation</title>
     <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -38,15 +36,15 @@
 <h1>Python Autotests<a class="headerlink" href="#python-autotests" title="Permalink to this headline">¶</a></h1>
 <p><strong>To add tests you need:</strong></p>
 <ul class="simple">
-<li>Create folder named <strong>tests</strong></li>
-<li>Add <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code> file</li>
-<li>Create a file whose name starts with <strong>test_</strong> (put corresponding import to <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code> file from the previous step)</li>
-<li>Add new Class based on one of <a class="reference internal" href="unittest.html"><span class="doc">test cases</span></a></li>
-<li>Add test methods whose names start with <strong>test_</strong></li>
+<li><p>Create folder named <strong>tests</strong></p></li>
+<li><p>Add <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code> file</p></li>
+<li><p>Create a file whose name starts with <strong>test_</strong> (put corresponding import to <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code> file from the previous step)</p></li>
+<li><p>Add new Class based on one of <a class="reference internal" href="unittest.html"><span class="doc">test cases</span></a></p></li>
+<li><p>Add test methods whose names start with <strong>test_</strong></p></li>
 </ul>
 <div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">you shall NOT import <code class="docutils literal notranslate"><span class="pre">tests</span></code> in module folder, i.e. do NOT add <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">.</span> <span class="pre">import</span> <span class="pre">tests</span></code> to main <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code> file</p>
+<p class="admonition-title">Warning</p>
+<p>you shall NOT import <code class="docutils literal notranslate"><span class="pre">tests</span></code> in module folder, i.e. do NOT add <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">.</span> <span class="pre">import</span> <span class="pre">tests</span></code> to main <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code> file</p>
 </div>
 <p><strong>Example</strong>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">odoo.tests.common</span> <span class="k">import</span> <span class="n">TransactionCase</span>
@@ -141,13 +139,11 @@
 </ul>
 </div>
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../../search.html" method="get">
-      <input type="text" name="q" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
       <input type="submit" value="Go" />
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
     </form>
     </div>
 </div>

@@ -1,11 +1,9 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
     <title>at_install, post_install &#8212; odoo-test.sh  documentation</title>
     <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -44,17 +42,17 @@
 <div class="section" id="at-install">
 <h2>at_install<a class="headerlink" href="#at-install" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>runs tests right after loading module’s files. It runs only in demo mode.</li>
-<li>runs as if other not loaded yet modules are not installed at all</li>
-<li>runs before marking module as installed, which also leads to not loading module’s qweb without <a class="reference external" href="https://github.com/odoo/odoo/blob/48dafd5/addons/point_of_sale/tests/test_frontend.py#L306-L311">fixing it manually</a> (don’t forget to use <a class="reference internal" href="../js/phantom_js-test_cr.html"><span class="doc">special environment</span></a> in odoo before version 12) .</li>
+<li><p>runs tests right after loading module’s files. It runs only in demo mode.</p></li>
+<li><p>runs as if other not loaded yet modules are not installed at all</p></li>
+<li><p>runs before marking module as installed, which also leads to not loading module’s qweb without <a class="reference external" href="https://github.com/odoo/odoo/blob/48dafd5/addons/point_of_sale/tests/test_frontend.py#L306-L311">fixing it manually</a> (don’t forget to use <a class="reference internal" href="../js/phantom_js-test_cr.html"><span class="doc">special environment</span></a> in odoo before version 12) .</p></li>
 </ul>
 </div>
 <div class="section" id="post-install">
 <h2>post_install<a class="headerlink" href="#post-install" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>runs after installing all modules in current installation set</li>
-<li>runs after calling <code class="docutils literal notranslate"><span class="pre">registry.setup_models(cr)</span></code></li>
-<li>runs after calling <code class="docutils literal notranslate"><span class="pre">model._register_hook(cr)</span></code></li>
+<li><p>runs after installing all modules in current installation set</p></li>
+<li><p>runs after calling <code class="docutils literal notranslate"><span class="pre">registry.setup_models(cr)</span></code></p></li>
+<li><p>runs after calling <code class="docutils literal notranslate"><span class="pre">model._register_hook(cr)</span></code></p></li>
 </ul>
 </div>
 </div>
@@ -114,13 +112,11 @@
 </ul>
 </div>
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../../search.html" method="get">
-      <input type="text" name="q" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
       <input type="submit" value="Go" />
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
     </form>
     </div>
 </div>

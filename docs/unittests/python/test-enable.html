@@ -1,11 +1,9 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
     <title>How to run tests &#8212; odoo-test.sh  documentation</title>
     <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -38,33 +36,31 @@
 <h1>How to run tests<a class="headerlink" href="#how-to-run-tests" title="Permalink to this headline">¶</a></h1>
 <p>Use following parameters when you start odoo:</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">--test-enable</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">-d</span> <span class="pre">$DB_CONTAINER</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">-i</span> <span class="pre">$MODULE</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">--workers=0</span></code></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--test-enable</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-d</span> <span class="pre">$DB_CONTAINER</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-i</span> <span class="pre">$MODULE</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--workers=0</span></code></p></li>
 </ul>
 <div class="section" id="js-tests">
 <h2>js tests<a class="headerlink" href="#js-tests" title="Permalink to this headline">¶</a></h2>
 <p>To run tests with phantomjs tests you also need:</p>
 <ul class="simple">
-<li><a class="reference external" href="http://phantomjs.org/download.html">Install phantomjs</a> or use dockers (see below)</li>
-<li>use <code class="docutils literal notranslate"><span class="pre">--db-filter=.*</span></code></li>
+<li><p><a class="reference external" href="http://phantomjs.org/download.html">Install phantomjs</a> or use dockers (see below)</p></li>
+<li><p>use <code class="docutils literal notranslate"><span class="pre">--db-filter=.*</span></code></p></li>
 </ul>
 </div>
 <div class="section" id="docker-users">
 <h2>Docker users<a class="headerlink" href="#docker-users" title="Permalink to this headline">¶</a></h2>
 <p>You don’t need to remove docker container to run test. You can run it in a separate container</p>
 <ul class="simple">
-<li>don’t worry about name for new container – just use <code class="docutils literal notranslate"><span class="pre">--rm</span></code> arg</li>
-<li>No need to expose ports</li>
+<li><p>don’t worry about name for new container – just use <code class="docutils literal notranslate"><span class="pre">--rm</span></code> arg</p></li>
+<li><p>No need to expose ports</p></li>
 </ul>
 <p>So, to run tests with docker:</p>
 <ul>
-<li><p class="first">use an odoo database which has required modules installed (otherwise it will test all dependencies too)</p>
-</li>
-<li><p class="first">OPTIONAL: stop main odoo container, but keep db container</p>
-</li>
-<li><p class="first">run new container, e.g.:</p>
+<li><p>use an odoo database which has required modules installed (otherwise it will test all dependencies too)</p></li>
+<li><p>OPTIONAL: stop main odoo container, but keep db container</p></li>
+<li><p>run new container, e.g.:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>docker run --rm --link $DB_CONTAINER:db \
 -v /something/at/host:/something/at/container \
 itprojectsllc/install-odoo:$ODOO_BRANCH-dev \
@@ -136,13 +132,11 @@ itprojectsllc/install-odoo:$ODOO_BRANCH-dev \
 </ul>
 </div>
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../../search.html" method="get">
-      <input type="text" name="q" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
       <input type="submit" value="Go" />
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
     </form>
     </div>
 </div>

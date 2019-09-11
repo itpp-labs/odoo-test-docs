@@ -1,11 +1,9 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
     <title>JS Autotests &#8212; odoo-test.sh  documentation</title>
     <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -39,14 +37,16 @@
 <p>For automatic web tests odoo uses <a class="reference external" href="http://phantomjs.org">phantomjs</a>.</p>
 <p><strong>How to write automatic js tests:</strong></p>
 <ul class="simple">
-<li>Follow instruction for <a class="reference internal" href="../python/index.html"><span class="doc">python tests</span></a></li>
-<li>If you have to make several steps in UI to test something:<ul>
-<li>Create <a class="reference internal" href="../../js-tour.html"><span class="doc">tour</span></a></li>
-<li><a class="reference internal" href="tests-via-tours.html"><span class="doc">Run tour via self.phantom_js()</span></a></li>
+<li><p>Follow instruction for <a class="reference internal" href="../python/index.html"><span class="doc">python tests</span></a></p></li>
+<li><p>If you have to make several steps in UI to test something:</p>
+<ul>
+<li><p>Create <a class="reference internal" href="../../js-tour.html"><span class="doc">tour</span></a></p></li>
+<li><p><a class="reference internal" href="tests-via-tours.html"><span class="doc">Run tour via self.phantom_js()</span></a></p></li>
 </ul>
 </li>
-<li>If just one step is enough:<ul>
-<li>Run you js code via <a class="reference internal" href="phantom_js.html"><span class="doc">self.phantom_js()</span></a></li>
+<li><p>If just one step is enough:</p>
+<ul>
+<li><p>Run you js code via <a class="reference internal" href="phantom_js.html"><span class="doc">self.phantom_js()</span></a></p></li>
 </ul>
 </li>
 </ul>
@@ -130,13 +130,11 @@
 </ul>
 </div>
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../../search.html" method="get">
-      <input type="text" name="q" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
       <input type="submit" value="Go" />
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
     </form>
     </div>
 </div>

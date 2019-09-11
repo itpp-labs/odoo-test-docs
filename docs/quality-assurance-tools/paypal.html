@@ -1,11 +1,9 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
     <title>Paypal testing &#8212; odoo-test.sh  documentation</title>
     <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -38,10 +36,10 @@
 <h1>Paypal testing<a class="headerlink" href="#paypal-testing" title="Permalink to this headline">¶</a></h1>
 <p>To test paypal payments you need to:</p>
 <ul class="simple">
-<li>Create developer account</li>
-<li>Add seller and buyer in developer sandbox</li>
-<li>Configure odoo</li>
-<li>Directly testing</li>
+<li><p>Create developer account</p></li>
+<li><p>Add seller and buyer in developer sandbox</p></li>
+<li><p>Configure odoo</p></li>
+<li><p>Directly testing</p></li>
 </ul>
 <div class="section" id="create-developer-account">
 <h2>Create developer account<a class="headerlink" href="#create-developer-account" title="Permalink to this headline">¶</a></h2>
@@ -50,22 +48,22 @@
 <div class="section" id="add-seller-and-buyer">
 <h2>Add seller and buyer<a class="headerlink" href="#add-seller-and-buyer" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Go to <strong>Dashboard-&gt;Sand box-&gt;Accounts</strong>. Create business (seller) and personal (buyer) accounts. It’s recommended to don’t use non-ascii symbols in account information (address, name etc.)</li>
-<li>Add some money to buyer (type amount in according field).</li>
-<li>Go to <a class="reference external" href="http://sandbox.paypal.com">http://sandbox.paypal.com</a> and login as seller. May be you will be forced to apply unconfirmed ssl certificate.</li>
-<li>Go to <strong>Profile</strong>.</li>
-<li>Copy <em>protected seller code</em>.</li>
+<li><p>Go to <strong>Dashboard-&gt;Sand box-&gt;Accounts</strong>. Create business (seller) and personal (buyer) accounts. It’s recommended to don’t use non-ascii symbols in account information (address, name etc.)</p></li>
+<li><p>Add some money to buyer (type amount in according field).</p></li>
+<li><p>Go to <a class="reference external" href="http://sandbox.paypal.com">http://sandbox.paypal.com</a> and login as seller. May be you will be forced to apply unconfirmed ssl certificate.</p></li>
+<li><p>Go to <strong>Profile</strong>.</p></li>
+<li><p>Copy <em>protected seller code</em>.</p></li>
 </ul>
 </div>
 <div class="section" id="configure-odoo">
 <h2>Configure odoo<a class="headerlink" href="#configure-odoo" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Install <strong>payment_paypal</strong> module</li>
-<li>Go to <strong>Settings-&gt;Payments-&gt;Payments-&gt;Paypal</strong>.</li>
-<li>Pres <strong>Edit</strong>.</li>
-<li>Enter here <strong>Paypal Email ID</strong> - it is <em>seller</em> account.</li>
-<li>Enter <strong>Paypal Merchant ID</strong> - paste <em>protected seller code</em>.</li>
-<li>Set price list currency same as in paypal account.</li>
+<li><p>Install <strong>payment_paypal</strong> module</p></li>
+<li><p>Go to <strong>Settings-&gt;Payments-&gt;Payments-&gt;Paypal</strong>.</p></li>
+<li><p>Pres <strong>Edit</strong>.</p></li>
+<li><p>Enter here <strong>Paypal Email ID</strong> - it is <em>seller</em> account.</p></li>
+<li><p>Enter <strong>Paypal Merchant ID</strong> - paste <em>protected seller code</em>.</p></li>
+<li><p>Set price list currency same as in paypal account.</p></li>
 </ul>
 </div>
 <div class="section" id="directly-testing">
@@ -130,13 +128,11 @@
 </ul>
 </div>
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
       <input type="submit" value="Go" />
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
     </form>
     </div>
 </div>

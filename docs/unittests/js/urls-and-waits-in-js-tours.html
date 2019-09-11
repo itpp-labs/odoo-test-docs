@@ -1,11 +1,9 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
     <title>How js tour works via phantomjs &#8212; odoo-test.sh  documentation</title>
     <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -38,35 +36,40 @@
 <h1>How js tour works via phantomjs<a class="headerlink" href="#how-js-tour-works-via-phantomjs" title="Permalink to this headline">¶</a></h1>
 <p>The order is as following:</p>
 <ul class="simple">
-<li>OPEN <em>url_path</em> from <strong>python</strong> <a class="reference internal" href="phantom_js.html"><span class="doc">phantom_js</span></a> method</li>
-<li>WAIT <em>ready</em> condition (Truthy or Falsy) from <strong>python</strong> <a class="reference internal" href="phantom_js.html"><span class="doc">phantom_js</span></a> method</li>
-<li>OPEN <em>url</em> from <a class="reference internal" href="../../js-tour.html"><span class="doc">tour</span></a>’s options in <strong>js</strong> file</li>
-<li>WAIT <em>wait_for</em> (deferred object) from <a class="reference internal" href="../../js-tour.html"><span class="doc">tour</span></a>’s options in <strong>js</strong> file</li>
-<li>DO first step from <strong>js</strong> <a class="reference internal" href="../../js-tour.html"><span class="doc">tour</span></a><ul>
-<li>WAIT when <em>trigger</em> becomes visible</li>
-<li>WAIT when <em>extra_trigger</em>  becomes visible (if <em>extra_trigger</em> is presented)</li>
-<li>EXECUTE action (<em>run</em> or click on <em>trigger</em>)</li>
+<li><p>OPEN <em>url_path</em> from <strong>python</strong> <a class="reference internal" href="phantom_js.html"><span class="doc">phantom_js</span></a> method</p></li>
+<li><p>WAIT <em>ready</em> condition (Truthy or Falsy) from <strong>python</strong> <a class="reference internal" href="phantom_js.html"><span class="doc">phantom_js</span></a> method</p></li>
+<li><p>OPEN <em>url</em> from <a class="reference internal" href="../../js-tour.html"><span class="doc">tour</span></a>’s options in <strong>js</strong> file</p></li>
+<li><p>WAIT <em>wait_for</em> (deferred object) from <a class="reference internal" href="../../js-tour.html"><span class="doc">tour</span></a>’s options in <strong>js</strong> file</p></li>
+<li><p>DO first step from <strong>js</strong> <a class="reference internal" href="../../js-tour.html"><span class="doc">tour</span></a></p>
+<ul>
+<li><p>WAIT when <em>trigger</em> becomes visible</p></li>
+<li><p>WAIT when <em>extra_trigger</em>  becomes visible (if <em>extra_trigger</em> is presented)</p></li>
+<li><p>EXECUTE action (<em>run</em> or click on <em>trigger</em>)</p></li>
 </ul>
 </li>
-<li>DO NEXT step<ul>
-<li>…</li>
+<li><p>DO NEXT step</p>
+<ul>
+<li><p>…</p></li>
 </ul>
 </li>
-<li>STOP Running when:<ul>
-<li>error happens:<ul>
-<li>thrown via <code class="docutils literal notranslate"><span class="pre">raise</span></code></li>
-<li>reported via <code class="docutils literal notranslate"><span class="pre">console.log('error',</span> <span class="pre">...)</span></code></li>
-<li>reported via <code class="docutils literal notranslate"><span class="pre">console.error(...)</span></code>, etc.</li>
-<li>reported by tour system on <strong>timeout</strong> for initial <em>ready</em> condition. <a class="reference external" href="https://github.com/odoo/odoo/blob/98f72ef/odoo/tests/phantomtest.js#L7-L8">Timeout value is 10 sec</a> and <a class="reference external" href="https://github.com/odoo/odoo/blob/98f72ef/odoo/tests/phantomtest.js#L118-L135">it cannot be changed</a>. The PR to odoo 12 to make it customizable: <a class="reference external" href="https://github.com/odoo/odoo/pull/24514">https://github.com/odoo/odoo/pull/24514</a></li>
-<li>reported by tour system on step <strong>timeout</strong>.</li>
+<li><p>STOP Running when:</p>
+<ul>
+<li><p>error happens:</p>
+<ul>
+<li><p>thrown via <code class="docutils literal notranslate"><span class="pre">raise</span></code></p></li>
+<li><p>reported via <code class="docutils literal notranslate"><span class="pre">console.log('error',</span> <span class="pre">...)</span></code></p></li>
+<li><p>reported via <code class="docutils literal notranslate"><span class="pre">console.error(...)</span></code>, etc.</p></li>
+<li><p>reported by tour system on <strong>timeout</strong> for initial <em>ready</em> condition. <a class="reference external" href="https://github.com/odoo/odoo/blob/98f72ef/odoo/tests/phantomtest.js#L7-L8">Timeout value is 10 sec</a> and <a class="reference external" href="https://github.com/odoo/odoo/blob/98f72ef/odoo/tests/phantomtest.js#L118-L135">it cannot be changed</a>. The PR to odoo 12 to make it customizable: <a class="reference external" href="https://github.com/odoo/odoo/pull/24514">https://github.com/odoo/odoo/pull/24514</a></p></li>
+<li><p>reported by tour system on step <strong>timeout</strong>.</p></li>
 </ul>
 </li>
-<li><code class="docutils literal notranslate"><span class="pre">'ok'</span></code> is reported via <code class="docutils literal notranslate"><span class="pre">console.log('ok')</span></code><ul>
-<li>directly by code</li>
-<li>indirectly by tour system when all steps are done</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'ok'</span></code> is reported via <code class="docutils literal notranslate"><span class="pre">console.log('ok')</span></code></p>
+<ul>
+<li><p>directly by code</p></li>
+<li><p>indirectly by tour system when all steps are done</p></li>
 </ul>
 </li>
-<li><strong>timeout</strong> from <strong>python</strong> <a class="reference internal" href="phantom_js.html"><span class="doc">phantom_js</span></a> method is occured. Default is 60 sec</li>
+<li><p><strong>timeout</strong> from <strong>python</strong> <a class="reference internal" href="phantom_js.html"><span class="doc">phantom_js</span></a> method is occured. Default is 60 sec</p></li>
 </ul>
 </li>
 </ul>
@@ -130,13 +133,11 @@
 </ul>
 </div>
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../../search.html" method="get">
-      <input type="text" name="q" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
       <input type="submit" value="Go" />
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
     </form>
     </div>
 </div>
