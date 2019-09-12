@@ -38,38 +38,45 @@
 <p>Steps may be executed automatically for <a class="reference internal" href="unittests/js/index.html"><span class="doc">testing</span></a> purpose or by user for <a class="reference internal" href="old-odoo-versions/js-tour-odoo-8-9/manual-launch.html#auto-launch-after-installation"><span class="std std-ref">demostrating</span></a> purpose.</p>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><p><a class="reference internal" href="#tour-definition" id="id4">Tour Definition</a></p>
+<li><p><a class="reference internal" href="#tour-definition" id="id5">Tour Definition</a></p>
 <ul>
-<li><p><a class="reference internal" href="#id1" id="id5">10.0+</a></p>
+<li><p><a class="reference internal" href="#id1" id="id6">10.0+</a></p>
 <ul>
-<li><p><a class="reference internal" href="#example" id="id6">Example</a></p></li>
-<li><p><a class="reference internal" href="#options" id="id7">Options</a></p></li>
-<li><p><a class="reference internal" href="#step" id="id8">Step</a></p></li>
-<li><p><a class="reference internal" href="#predefined-steps" id="id9">Predefined steps</a></p></li>
-<li><p><a class="reference internal" href="#more-documentation" id="id10">More documentation</a></p></li>
+<li><p><a class="reference internal" href="#example" id="id7">Example</a></p></li>
+<li><p><a class="reference internal" href="#options" id="id8">Options</a></p></li>
+<li><p><a class="reference internal" href="#step" id="id9">Step</a></p></li>
+<li><p><a class="reference internal" href="#predefined-steps" id="id10">Predefined steps</a></p></li>
+<li><p><a class="reference internal" href="#more-documentation" id="id11">More documentation</a></p></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#open-backend-menu" id="id11">Open backend menu</a></p>
+<li><p><a class="reference internal" href="#open-backend-menu" id="id12">Open backend menu</a></p>
 <ul>
-<li><p><a class="reference internal" href="#id2" id="id12">11.0+</a></p></li>
+<li><p><a class="reference internal" href="#id2" id="id13">10.0</a></p>
+<ul>
+<li><p><a class="reference internal" href="#manifest" id="id14">Manifest</a></p></li>
+<li><p><a class="reference internal" href="#load-xmlid" id="id15">load_xmlid</a></p></li>
+<li><p><a class="reference internal" href="#tour" id="id16">Tour</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#manual-launching" id="id13">Manual launching</a></p>
-<ul>
-<li><p><a class="reference internal" href="#id3" id="id14">10.0+</a></p></li>
+<li><p><a class="reference internal" href="#id3" id="id17">11.0+</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#auto-launch-after-installation" id="id15">Auto Launch after installation</a></p></li>
+<li><p><a class="reference internal" href="#manual-launching" id="id18">Manual launching</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id4" id="id19">10.0+</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#auto-launch-after-installation" id="id20">Auto Launch after installation</a></p></li>
 </ul>
 </div>
 <div class="section" id="tour-definition">
-<h2><a class="toc-backref" href="#id4">Tour Definition</a><a class="headerlink" href="#tour-definition" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id5">Tour Definition</a><a class="headerlink" href="#tour-definition" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id1">
-<h3><a class="toc-backref" href="#id5">10.0+</a><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id6">10.0+</a><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="example">
-<h4><a class="toc-backref" href="#id6">Example</a><a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h4>
+<h4><a class="toc-backref" href="#id7">Example</a><a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h4>
 <p>Example from <a class="reference external" href="https://github.com/odoo/odoo/blob/10.0/addons/website_sale/static/src/js/website_sale_tour_buy.js">website_sale</a> module:</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">odoo</span><span class="p">.</span><span class="nx">define</span><span class="p">(</span><span class="s1">&#39;website_sale.tour&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">require</span><span class="p">)</span> <span class="p">{</span>
 <span class="s1">&#39;use strict&#39;</span><span class="p">;</span>
@@ -118,7 +125,7 @@
 </div>
 </div>
 <div class="section" id="options">
-<h4><a class="toc-backref" href="#id7">Options</a><a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h4>
+<h4><a class="toc-backref" href="#id8">Options</a><a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h4>
 <p>Options (second argument of <code class="docutils literal notranslate"><span class="pre">tour.register</span></code>):</p>
 <ul class="simple">
 <li><p><strong>test</strong> – only for tests</p></li>
@@ -128,7 +135,7 @@
 </ul>
 </div>
 <div class="section" id="step">
-<h4><a class="toc-backref" href="#id8">Step</a><a class="headerlink" href="#step" title="Permalink to this headline">¶</a></h4>
+<h4><a class="toc-backref" href="#id9">Step</a><a class="headerlink" href="#step" title="Permalink to this headline">¶</a></h4>
 <p>Each step may have following attrubutes:</p>
 <ul class="simple">
 <li><p><strong>content</strong> – name or title of the step</p></li>
@@ -151,7 +158,7 @@
 </ul>
 </div>
 <div class="section" id="predefined-steps">
-<h4><a class="toc-backref" href="#id9">Predefined steps</a><a class="headerlink" href="#predefined-steps" title="Permalink to this headline">¶</a></h4>
+<h4><a class="toc-backref" href="#id10">Predefined steps</a><a class="headerlink" href="#predefined-steps" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">tour.STEPS.MENU_MORE</span></code> – clicks on menu <em>More</em> in backend when visible</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">tour.STEPS.TOGGLE_APPSWITCHER</span></code> – nagivate to Apps page when running in enterprise</p></li>
@@ -159,7 +166,7 @@
 </ul>
 </div>
 <div class="section" id="more-documentation">
-<h4><a class="toc-backref" href="#id10">More documentation</a><a class="headerlink" href="#more-documentation" title="Permalink to this headline">¶</a></h4>
+<h4><a class="toc-backref" href="#id11">More documentation</a><a class="headerlink" href="#more-documentation" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li><p><a class="reference external" href="https://www.odoo.com/slides/slide/the-new-way-to-develop-automated-tests-beautiful-tours-440">https://www.odoo.com/slides/slide/the-new-way-to-develop-automated-tests-beautiful-tours-440</a></p></li>
 <li><p><a class="reference external" href="https://github.com/odoo/odoo/blob/10.0/addons/web_tour/static/src/js/tour_manager.js">https://github.com/odoo/odoo/blob/10.0/addons/web_tour/static/src/js/tour_manager.js</a></p></li>
@@ -169,16 +176,59 @@
 </div>
 </div>
 <div class="section" id="open-backend-menu">
-<h2><a class="toc-backref" href="#id11">Open backend menu</a><a class="headerlink" href="#open-backend-menu" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id12">Open backend menu</a><a class="headerlink" href="#open-backend-menu" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id2">
-<h3><a class="toc-backref" href="#id12">11.0+</a><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id13">10.0</a><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p>Some additional actions are required to work with backend menus in tours</p>
+<div class="section" id="manifest">
+<h4><a class="toc-backref" href="#id14">Manifest</a><a class="headerlink" href="#manifest" title="Permalink to this headline">¶</a></h4>
+<p>Add <code class="docutils literal notranslate"><span class="pre">web_tour</span></code> to dependencies</p>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;depends&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="s2">&quot;web_tour&quot;</span><span class="p">,</span>
+<span class="p">],</span>
+<span class="c1"># ...</span>
+<span class="s2">&quot;demo&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="s2">&quot;views/assets_demo.xml&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;views/tour_views.xml&quot;</span><span class="p">,</span>
+<span class="p">],</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="load-xmlid">
+<h4><a class="toc-backref" href="#id15">load_xmlid</a><a class="headerlink" href="#load-xmlid" title="Permalink to this headline">¶</a></h4>
+<p>You need to set <code class="docutils literal notranslate"><span class="pre">load_xmlid</span></code> for <em>each</em> menu you need to open. Recommended
+name for the file is <code class="docutils literal notranslate"><span class="pre">tour_views.xml</span></code></p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<span class="nt">&lt;odoo&gt;</span>
+    <span class="c">&lt;!-- Make the xmlid of menus required by the tour available in webclient --&gt;</span>
+    <span class="nt">&lt;record</span> <span class="na">id=</span><span class="s">&quot;base.menu_administration&quot;</span> <span class="na">model=</span><span class="s">&quot;ir.ui.menu&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;load_xmlid&quot;</span> <span class="na">eval=</span><span class="s">&quot;True&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/record&gt;</span>
+<span class="nt">&lt;/odoo&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="tour">
+<h4><a class="toc-backref" href="#id16">Tour</a><a class="headerlink" href="#tour" title="Permalink to this headline">¶</a></h4>
+<p>Use <em>trigger</em> selector for both editions:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="nx">trigger</span><span class="o">:</span> <span class="s1">&#39;.o_app[data-menu-xmlid=&quot;base.menu_administration&quot;], .oe_menu_toggler[data-menu-xmlid=&quot;base.menu_administration&quot;]&#39;</span><span class="p">,</span>
+    <span class="nx">content</span><span class="o">:</span> <span class="nx">_t</span><span class="p">(</span><span class="s2">&quot;Configuration options are available in the Settings app.&quot;</span><span class="p">),</span>
+    <span class="nx">position</span><span class="o">:</span> <span class="s2">&quot;bottom&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id3">
+<h3><a class="toc-backref" href="#id17">11.0+</a><a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
 <p><a class="reference external" href="https://github.com/odoo/odoo/commit/7e008469e4e5afe9b4c7151a4738240462359f98">No additional actions are required.</a></p>
 </div>
 </div>
 <div class="section" id="manual-launching">
-<h2><a class="toc-backref" href="#id13">Manual launching</a><a class="headerlink" href="#manual-launching" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id3">
-<h3><a class="toc-backref" href="#id14">10.0+</a><a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<h2><a class="toc-backref" href="#id18">Manual launching</a><a class="headerlink" href="#manual-launching" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id4">
+<h3><a class="toc-backref" href="#id19">10.0+</a><a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><a class="reference external" href="https://odoo-development.readthedocs.io/en/latest/odoo/usage/debug-mode.html">activate developer mode</a>.</p></li>
 <li><p>Click <em>Bug</em> icon (between chat <em>icon</em> and <em>Username</em> at top right-hand corner)</p>
@@ -200,7 +250,7 @@
 </div>
 </div>
 <div class="section" id="auto-launch-after-installation">
-<h2><a class="toc-backref" href="#id15">Auto Launch after installation</a><a class="headerlink" href="#auto-launch-after-installation" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id20">Auto Launch after installation</a><a class="headerlink" href="#auto-launch-after-installation" title="Permalink to this headline">¶</a></h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The section archived and now is available <a class="reference internal" href="old-odoo-versions/js-tour-odoo-8-9/auto-launch.html"><span class="doc">here</span></a>.</p>
@@ -242,11 +292,12 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#open-backend-menu">Open backend menu</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id2">11.0+</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">10.0</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">11.0+</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#manual-launching">Manual launching</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id3">10.0+</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">10.0+</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#auto-launch-after-installation">Auto Launch after installation</a></li>

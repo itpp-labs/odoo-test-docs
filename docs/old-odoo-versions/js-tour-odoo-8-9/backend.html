@@ -35,13 +35,56 @@
   <div class="section" id="open-backend-menu">
 <h1>Open backend menu<a class="headerlink" href="#open-backend-menu" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="id1">
-<h2>8.0, 9.0<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<h2>8.0<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <p>The only way to open menu is search by string, for example</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
     <span class="nx">title</span><span class="o">:</span>     <span class="s2">&quot;go to accounting&quot;</span><span class="p">,</span>
     <span class="nx">element</span><span class="o">:</span>   <span class="s1">&#39;.oe_menu_toggler:contains(&quot;Accounting&quot;):visible&#39;</span><span class="p">,</span>
 <span class="p">},</span>
 </pre></div>
+</div>
+</div>
+<div class="section" id="id2">
+<h2>9.0<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>Some additional actions are required to work with backend menus in tours</p>
+<div class="section" id="manifest">
+<h3>Manifest<a class="headerlink" href="#manifest" title="Permalink to this headline">¶</a></h3>
+<p>Add <code class="docutils literal notranslate"><span class="pre">web_tour</span></code> to dependencies</p>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;depends&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="s2">&quot;web_tour&quot;</span><span class="p">,</span>
+<span class="p">],</span>
+<span class="c1"># ...</span>
+<span class="s2">&quot;demo&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="s2">&quot;views/assets_demo.xml&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;views/tour_views.xml&quot;</span><span class="p">,</span>
+<span class="p">],</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="load-xmlid">
+<h3>load_xmlid<a class="headerlink" href="#load-xmlid" title="Permalink to this headline">¶</a></h3>
+<p>You need to set <code class="docutils literal notranslate"><span class="pre">load_xmlid</span></code> for <em>each</em> menu you need to open. Recommended
+name for the file is <code class="docutils literal notranslate"><span class="pre">tour_views.xml</span></code></p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<span class="nt">&lt;odoo&gt;</span>
+    <span class="c">&lt;!-- Make the xmlid of menus required by the tour available in webclient --&gt;</span>
+    <span class="nt">&lt;record</span> <span class="na">id=</span><span class="s">&quot;base.menu_administration&quot;</span> <span class="na">model=</span><span class="s">&quot;ir.ui.menu&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;load_xmlid&quot;</span> <span class="na">eval=</span><span class="s">&quot;True&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/record&gt;</span>
+<span class="nt">&lt;/odoo&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="tour">
+<h3>Tour<a class="headerlink" href="#tour" title="Permalink to this headline">¶</a></h3>
+<p>Use <em>trigger</em> selector for both editions:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="nx">trigger</span><span class="o">:</span> <span class="s1">&#39;.o_app[data-menu-xmlid=&quot;base.menu_administration&quot;], .oe_menu_toggler[data-menu-xmlid=&quot;base.menu_administration&quot;]&#39;</span><span class="p">,</span>
+    <span class="nx">content</span><span class="o">:</span> <span class="nx">_t</span><span class="p">(</span><span class="s2">&quot;Configuration options are available in the Settings app.&quot;</span><span class="p">),</span>
+    <span class="nx">position</span><span class="o">:</span> <span class="s2">&quot;bottom&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
 </div>
 </div>
 </div>
@@ -78,7 +121,8 @@
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">Documentation archive</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="definition.html">Tour Definition</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Open backend menu</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id1">8.0, 9.0</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id1">8.0</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">9.0</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="manual-launch.html">Manual Launching</a></li>

@@ -2,8 +2,7 @@
  JS tour
 =========
 
-
-Tour is a set of steps of possible scenario of module usage. 
+Tour is a set of steps of possible scenario of module usage.
 
 Steps may be executed automatically for :doc:`testing <../unittests/js/index>` purpose or by user for :ref:`demostrating <auto_launch_after_installation>` purpose.
 
@@ -115,11 +114,62 @@ More documentation
 Open backend menu
 =================
 
+10.0
+----
+
+Some additional actions are required to work with backend menus in tours
+
+Manifest
+~~~~~~~~
+
+Add ``web_tour`` to dependencies
+
+.. code-block:: py
+
+    "depends": [
+        "web_tour",
+    ],
+    # ...
+    "demo": [
+        "views/assets_demo.xml",
+        "views/tour_views.xml",
+    ],
+
+
+load_xmlid
+~~~~~~~~~~
+
+You need to set ``load_xmlid`` for *each* menu you need to open. Recommended
+name for the file is ``tour_views.xml``
+
+.. code-block:: xml
+
+    <?xml version="1.0" encoding="utf-8"?>
+    <odoo>
+        <!-- Make the xmlid of menus required by the tour available in webclient -->
+        <record id="base.menu_administration" model="ir.ui.menu">
+            <field name="load_xmlid" eval="True"/>
+        </record>
+    </odoo>
+
+Tour
+~~~~
+
+Use *trigger* selector for both editions:
+
+.. code-block:: js
+
+
+    {
+        trigger: '.o_app[data-menu-xmlid="base.menu_administration"], .oe_menu_toggler[data-menu-xmlid="base.menu_administration"]',
+        content: _t("Configuration options are available in the Settings app."),
+        position: "bottom"
+    }
+
 11.0+
 -----
 
 `No additional actions are required. <https://github.com/odoo/odoo/commit/7e008469e4e5afe9b4c7151a4738240462359f98>`__
-
 
 Manual launching
 ================
