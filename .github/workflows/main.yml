@@ -19,7 +19,7 @@ jobs:
         pip install -r requirements.txt
     - name: Rebuild
       run: cd doc-src && make github
-    - uses: matheusalbino/git-commit@v1.0.0
+    - uses: matheusalbino/git-commit@v1.0.1
       name: Commit updates
       with:
         user-name: Mitchell Admin (from Github Actions)
