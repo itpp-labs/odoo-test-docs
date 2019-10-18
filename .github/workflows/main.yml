@@ -22,10 +22,10 @@ jobs:
     - uses: matheusalbino/git-commit@v1.0.1
       name: Commit updates
       with:
-        user-name: Mitchell Admin (from Github Actions)
-        user-email: itpp-bot@it-projects.info
+        user-name: Marc Demo (Github Actions)
+        user-email: i18n-bot@it-projects.info
         message: |
           :alien: recompile docs
           
           Sent from Github Actions (see .github/workflows/main.yml )
-        github-token: ${{ secrets.GITHUB_TOKEN }}
+        github-token: ${{ secrets.MY_GITHUB_TOKEN }}
