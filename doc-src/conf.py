@@ -19,7 +19,7 @@
 
 # -- Project information -----------------------------------------------------
 
-project = u'https://itpp.dev/test/'
+project = u'itpp.dev/test/'
 copyright = u'2020, IT-Projects Labs; 2019, IT-Projects LLC'
 author = u'IT-Projects Labs'
 
