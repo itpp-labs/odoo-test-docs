@@ -20,7 +20,7 @@
 # -- Project information -----------------------------------------------------
 
 project = u'https://itpp.dev/test/'
-copyright = u'2019, IT-Projects LLC; 2020, IT-Projects Labs'
+copyright = u'2020, IT-Projects Labs; 2019, IT-Projects LLC'
 author = u'IT-Projects Labs'
 
 # The short X.Y version
