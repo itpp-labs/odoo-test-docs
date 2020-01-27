@@ -19,17 +19,6 @@ jobs:
         pip install -r requirements.txt
     - name: Rebuild
       run: cd doc-src && make github
-    - uses: matheusalbino/git-commit@v1.0.1
-      name: Commit updates
-      with:
-        user-name: Marc Demo (Github Actions)
-        user-email: i18n-bot@it-projects.info
-        message: |
-          :alien: recompile docs
-          
-          Sent from Github Actions (see .github/workflows/main.yml )
-        github-token: ${{ secrets.MY_GITHUB_TOKEN }}
-
     - uses: jakejarvis/s3-sync-action@v0.5.1
       name: Upload
       with:
@@ -40,3 +29,13 @@ jobs:
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         SOURCE_DIR: 'docs'
         DEST_DIR: 'itpp.dev/test/'
+    - uses: matheusalbino/git-commit@v1.0.1
+      name: Commit updates
+      with:
+        user-name: Marc Demo (Github Actions)
+        user-email: i18n-bot@it-projects.info
+        message: |
+          :alien: recompile docs
+          
+          Sent from Github Actions (see .github/workflows/main.yml )
+        github-token: ${{ secrets.MY_GITHUB_TOKEN }}
