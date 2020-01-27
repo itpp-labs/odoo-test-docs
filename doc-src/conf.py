@@ -19,9 +19,9 @@
 
 # -- Project information -----------------------------------------------------
 
-project = u'odoo-test.sh'
-copyright = u'2019, IT-Projects LLC'
-author = u'IT-Projects LLC'
+project = u'https://itpp.dev/test/'
+copyright = u'2019, IT-Projects LLC; 2020, IT-Projects Labs'
+author = u'IT-Projects Labs'
 
 # The short X.Y version
 version = u''
@@ -83,8 +83,8 @@ html_theme = 'alabaster'
 html_theme_options = {
     'show_powered_by': False,
     'github_banner': True,
-    'github_user': 'it-projects-llc',
-    'github_repo': 'odoo-test',
+    'github_user': 'itpp-labs',
+    'github_repo': 'odoo-test-docs',
 }
 
 # Add any paths that contain custom static files (such as style sheets) here,
