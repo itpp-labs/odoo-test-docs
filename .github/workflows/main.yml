@@ -1,4 +1,4 @@
-name: CI
+name: Update Docs
 
 on: [push]
 
@@ -29,3 +29,14 @@ jobs:
           
           Sent from Github Actions (see .github/workflows/main.yml )
         github-token: ${{ secrets.MY_GITHUB_TOKEN }}
+
+    - uses: jakejarvis/s3-sync-action@v0.5.1
+      name: Upload
+      with:
+        args: --follow-symlinks
+      env:
+        AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
+        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        SOURCE_DIR: 'docs'
+        DEST_DIR: 'itpp.dev/test/'
