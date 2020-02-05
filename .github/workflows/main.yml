@@ -1,6 +1,9 @@
 name: Update Docs
 
-on: [push]
+on: 
+  push:
+    branches: 
+    - master
 
 jobs:
   build:
@@ -36,6 +39,7 @@ jobs:
       with:
         #user-name: Marc Demo (Github Actions)
         #user-email: i18n-bot@it-projects.info
+        branch: master
         commit_message: |
           :alien: recompile docs
           
