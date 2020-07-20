@@ -24,7 +24,7 @@ Source of the https://itpp.dev/test/ website
 
 * Try it out:
 
-      cd /path/to/odoo-test/doc-src
+      cd /path/to/odoo-test-docs/doc-src
       make html
 
       # (check warningn and errors in compilation logs and fix them if needed)
