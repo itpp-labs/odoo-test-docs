@@ -34,7 +34,7 @@ jobs:
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         SOURCE_DIR: 'docs'
         DEST_DIR: 'itpp.dev/test/'
-    - uses: stefanzweifel/git-auto-commit-action@refactor/remove-git-setup
+    - uses: stefanzweifel/git-auto-commit-action@v4
       name: Commit updates
       with:
         #user-name: Marc Demo (Github Actions)
