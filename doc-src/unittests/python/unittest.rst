@@ -65,7 +65,7 @@ For more information see https://docs.python.org/2.7/library/unittest.html#test-
 Assert Methods
 ==============
 
-From https://docs.python.org/3/library/unittest.html#assert-methods:
+`Main methods <https://docs.python.org/3/library/unittest.html#assert-methods>`__:
 
 +-----------------------------------------+-----------------------------+
 | Method                                  | Checks that                 |
@@ -94,3 +94,9 @@ From https://docs.python.org/3/library/unittest.html#assert-methods:
 +-----------------------------------------+-----------------------------+
 | assertNotIsInstance(a, b)               | ``not isinstance(a, b)``    |
 +-----------------------------------------+-----------------------------+
+
+Also, to check error raising::
+
+        with self.assertRaises(ValidationError):
+            # some code that supposed to raise error
+            ...
