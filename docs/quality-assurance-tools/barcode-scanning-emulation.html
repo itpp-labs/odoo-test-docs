@@ -36,6 +36,8 @@
   <div class="section" id="emulation-barcode">
 <h1>Emulation barcode<a class="headerlink" href="#emulation-barcode" title="Permalink to this headline">¶</a></h1>
 <p>Barcode scanner connected with computer work as keyboard. E.g. after scanning send sequence of symbols as if fast typing on the keyboard.</p>
+<div class="section" id="emulation-via-os">
+<h2>Emulation via OS<a class="headerlink" href="#emulation-via-os" title="Permalink to this headline">¶</a></h2>
 <p>Install <strong>xdotool</strong> app if you haven’t it yet.</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>sudo apt-get install xdotool
 </pre></div>
@@ -50,6 +52,14 @@
 </div>
 <p>Where: 3 - sleep seconds; 3333333333338 - barcode.</p>
 <p>After successfully scanning you will see ‘3333333333338’ in the command line. If toggle to other window that symbols appear in the input field in the this window. So we can send sequence in the app as if we scanning it.</p>
+</div>
+<div class="section" id="emulation-via-browser">
+<h2>Emulation via browser<a class="headerlink" href="#emulation-via-browser" title="Permalink to this headline">¶</a></h2>
+<p>Open browser console (e.g. via F12 button) and type:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">odoo</span><span class="p">.</span><span class="nx">__DEBUG__</span><span class="p">.</span><span class="nx">services</span><span class="p">[</span><span class="s1">&#39;web.core&#39;</span><span class="p">].</span><span class="nx">bus</span><span class="p">.</span><span class="nx">trigger</span><span class="p">(</span><span class="s1">&#39;barcode_scanned&#39;</span><span class="p">,</span> <span class="s1">&#39;1234567890128&#39;</span><span class="p">,</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.web_client&#39;</span><span class="p">)[</span><span class="mf">0</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
 </div>
 
 
@@ -81,7 +91,11 @@
 <li class="toctree-l1"><a class="reference internal" href="../unittests/index.html">Unit tests</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Quality assurance tools</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="slow-internet-emulation.html">Emulation of slow internet connections in browser</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Emulation barcode</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Emulation barcode</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#emulation-via-os">Emulation via OS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#emulation-via-browser">Emulation via browser</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="escpos-printer-emulation.html">ESC/POS printer emulation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="paypal.html">Paypal testing</a></li>
 </ul>
