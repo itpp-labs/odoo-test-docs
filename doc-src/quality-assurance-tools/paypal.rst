@@ -29,8 +29,7 @@ Configure odoo
 * Go to **Settings->Payments->Payments->Paypal**.
 * Pres **Edit**.
 * Enter here **Paypal Email ID** - it is *seller* account.
-* Enter **Paypal Merchant ID** - paste *protected seller code*.
-* Set price list currency same as in paypal account.
+* Follow odoo docs: https://www.odoo.com/documentation/user/14.0/general/payment_acquirers/paypal.html
 
 Directly testing
 ^^^^^^^^^^^^^^^^
