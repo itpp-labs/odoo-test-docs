@@ -19,8 +19,7 @@ Add seller and buyer
 * Go to **Dashboard->Sand box->Accounts**. Create business (seller) and personal (buyer) accounts. It's recommended to don't use non-ascii symbols in account information (address, name etc.)
 * Add some money to buyer (type amount in according field).
 * Go to http://sandbox.paypal.com and login as seller. May be you will be forced to apply unconfirmed ssl certificate.
-* Go to **Profile**.
-* Copy *protected seller code*.
+* Follow odoo docs: https://www.odoo.com/documentation/user/14.0/general/payment_acquirers/paypal.html
 
 
 Configure odoo
