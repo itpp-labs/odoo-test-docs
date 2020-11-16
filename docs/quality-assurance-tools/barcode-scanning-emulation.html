@@ -55,7 +55,7 @@
 </div>
 <div class="section" id="emulation-via-browser">
 <h2>Emulation via browser<a class="headerlink" href="#emulation-via-browser" title="Permalink to this headline">¶</a></h2>
-<p>Open browser console (e.g. via F12 button) and type:</p>
+<p>Open browser console (e.g. via F12 button) and type (this doesn’t work for form inputs):</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">odoo</span><span class="p">.</span><span class="nx">__DEBUG__</span><span class="p">.</span><span class="nx">services</span><span class="p">[</span><span class="s1">&#39;web.core&#39;</span><span class="p">].</span><span class="nx">bus</span><span class="p">.</span><span class="nx">trigger</span><span class="p">(</span><span class="s1">&#39;barcode_scanned&#39;</span><span class="p">,</span> <span class="s1">&#39;1234567890128&#39;</span><span class="p">,</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.web_client&#39;</span><span class="p">)[</span><span class="mf">0</span><span class="p">])</span>
 </pre></div>
 </div>
