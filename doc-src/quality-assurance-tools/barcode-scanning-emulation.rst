@@ -32,7 +32,7 @@ After successfully scanning you will see '3333333333338' in the command line. If
 Emulation via browser
 =====================
 
-Open browser console (e.g. via F12 button) and type:
+Open browser console (e.g. via F12 button) and type (this doesn't work for form inputs):
 
 .. code-block:: js
 
