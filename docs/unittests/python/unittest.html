@@ -37,14 +37,58 @@
 <h1>Odoo unittest<a class="headerlink" href="#odoo-unittest" title="Permalink to this headline">¶</a></h1>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><p><a class="reference internal" href="#test-classes" id="id1">Test classes</a></p></li>
-<li><p><a class="reference internal" href="#setup-and-other-methods" id="id2">setUp and other methods</a></p></li>
-<li><p><a class="reference internal" href="#assert-methods" id="id3">Assert Methods</a></p></li>
+<li><p><a class="reference internal" href="#test-classes" id="id1">Test classes</a></p>
+<ul>
+<li><p><a class="reference internal" href="#odoo-15-0" id="id2">Odoo 15.0+</a></p></li>
+<li><p><a class="reference internal" href="#odoo-14-0" id="id3">Odoo 14.0-</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#setup-and-other-methods" id="id4">setUp and other methods</a></p></li>
+<li><p><a class="reference internal" href="#assert-methods" id="id5">Assert Methods</a></p></li>
 </ul>
 </div>
 <div class="section" id="test-classes">
 <h2><a class="toc-backref" href="#id1">Test classes</a><a class="headerlink" href="#test-classes" title="Permalink to this headline">¶</a></h2>
-<p>From <a class="reference external" href="https://github.com/odoo/odoo/blob/master/odoo/tests/common.py">odoo/tests/common.py</a>:</p>
+<div class="section" id="odoo-15-0">
+<h3><a class="toc-backref" href="#id2">Odoo 15.0+</a><a class="headerlink" href="#odoo-15-0" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://github.com/odoo/odoo/pull/62031">Since Odoo 15</a>, <code class="docutils literal notranslate"><span class="pre">SavepointCase</span></code> is replaced with updated <code class="docutils literal notranslate"><span class="pre">TransactionCase</span></code>.</p>
+<p>Complete <a class="reference external" href="https://github.com/odoo/odoo/blob/master/odoo/tests/common.py">list of the classes</a>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">BaseCase</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Subclass of TestCase for common OpenERP-specific code.</span>
+
+<span class="sd">    This class is abstract and expects self.registry, self.cr and self.uid to be</span>
+<span class="sd">    initialized by subclasses.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<span class="k">class</span> <span class="nc">TransactionCase</span><span class="p">(</span><span class="n">BaseCase</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Test class in which all test methods are run in a single transaction,</span>
+<span class="sd">    but each test method is run in a sub-transaction managed by a savepoint.</span>
+<span class="sd">    The transaction&#39;s cursor is always closed without committing.</span>
+<span class="sd">    The data setup common to all methods should be done in the class method</span>
+<span class="sd">    `setUpClass`, so that it is done once for all test methods. This is useful</span>
+<span class="sd">    for test cases containing fast tests but with significant database setup</span>
+<span class="sd">    common to all cases (complex in-db test data).</span>
+<span class="sd">    After being run, each test method cleans up the record cache and the</span>
+<span class="sd">    registry cache. However, there is no cleanup of the registry models and</span>
+<span class="sd">    fields. If a test modifies the registry (custom models and/or fields), it</span>
+<span class="sd">    should prepare the necessary cleanup (`self.registry.reset_changes()`).</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+<span class="k">class</span> <span class="nc">SingleTransactionCase</span><span class="p">(</span><span class="n">BaseCase</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; TestCase in which all test methods are run in the same transaction,</span>
+<span class="sd">    the transaction is started with the first test method and rolled back at</span>
+<span class="sd">    the end of the last.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<span class="k">class</span> <span class="nc">HttpCase</span><span class="p">(</span><span class="n">TransactionCase</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Transactional HTTP TestCase with url_open and phantomjs helpers.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="odoo-14-0">
+<h3><a class="toc-backref" href="#id3">Odoo 14.0-</a><a class="headerlink" href="#odoo-14-0" title="Permalink to this headline">¶</a></h3>
+<p>From <a class="reference external" href="https://github.com/odoo/odoo/blob/14.0/odoo/tests/common.py">odoo/tests/common.py</a>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">BaseCase</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Subclass of TestCase for common OpenERP-specific code.</span>
@@ -83,8 +127,9 @@
 </pre></div>
 </div>
 </div>
+</div>
 <div class="section" id="setup-and-other-methods">
-<h2><a class="toc-backref" href="#id2">setUp and other methods</a><a class="headerlink" href="#setup-and-other-methods" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id4">setUp and other methods</a><a class="headerlink" href="#setup-and-other-methods" title="Permalink to this headline">¶</a></h2>
 <p>For more information see <a class="reference external" href="https://docs.python.org/2.7/library/unittest.html#test-cases">https://docs.python.org/2.7/library/unittest.html#test-cases</a></p>
 <ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">setUp()</span></code> – Method called to prepare the test fixture. This is called immediately before calling the test method. It’s recommended to use in <code class="docutils literal notranslate"><span class="pre">TransactionCase</span></code> and <code class="docutils literal notranslate"><span class="pre">HttpCase</span></code> classes</p></li>
@@ -99,7 +144,7 @@
 </ul>
 </div>
 <div class="section" id="assert-methods">
-<h2><a class="toc-backref" href="#id3">Assert Methods</a><a class="headerlink" href="#assert-methods" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id5">Assert Methods</a><a class="headerlink" href="#assert-methods" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference external" href="https://docs.python.org/3/library/unittest.html#assert-methods">Main methods</a>:</p>
 <table class="docutils align-default">
 <colgroup>
