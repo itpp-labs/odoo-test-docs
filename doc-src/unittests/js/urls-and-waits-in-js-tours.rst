@@ -25,7 +25,7 @@ The order is as following:
     * thrown via ``raise``
     * reported via ``console.log('error', ...)``
     * reported via ``console.error(...)``, etc.
-    * reported by tour system on **timeout** for initial *ready* condition. `Timeout value is 10 sec <https://github.com/odoo/odoo/blob/98f72ef/odoo/tests/phantomtest.js#L7-L8>`__ and `it cannot be changed <https://github.com/odoo/odoo/blob/98f72ef/odoo/tests/phantomtest.js#L118-L135>`__. The PR to odoo 12 to make it customizable: https://github.com/odoo/odoo/pull/24514
+    * reported by tour system on **timeout** for initial *ready* condition. `Timeout value is 60 sec <https://github.com/odoo/odoo/blob/5aa540091f3f301960aa5a07fba2a6d009f09624/odoo/tests/common.py#L753>`__ and `it cannot be changed <https://github.com/odoo/odoo/blob/5aa540091f3f301960aa5a07fba2a6d009f09624/odoo/tests/common.py#L985>`__.
     * reported by tour system on step **timeout**.
 
   * ``'ok'`` is reported via ``console.log('ok')``
