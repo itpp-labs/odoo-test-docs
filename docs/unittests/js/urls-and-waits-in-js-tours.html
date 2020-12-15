@@ -60,7 +60,7 @@
 <li><p>thrown via <code class="docutils literal notranslate"><span class="pre">raise</span></code></p></li>
 <li><p>reported via <code class="docutils literal notranslate"><span class="pre">console.log('error',</span> <span class="pre">...)</span></code></p></li>
 <li><p>reported via <code class="docutils literal notranslate"><span class="pre">console.error(...)</span></code>, etc.</p></li>
-<li><p>reported by tour system on <strong>timeout</strong> for initial <em>ready</em> condition. <a class="reference external" href="https://github.com/odoo/odoo/blob/98f72ef/odoo/tests/phantomtest.js#L7-L8">Timeout value is 10 sec</a> and <a class="reference external" href="https://github.com/odoo/odoo/blob/98f72ef/odoo/tests/phantomtest.js#L118-L135">it cannot be changed</a>. The PR to odoo 12 to make it customizable: <a class="reference external" href="https://github.com/odoo/odoo/pull/24514">https://github.com/odoo/odoo/pull/24514</a></p></li>
+<li><p>reported by tour system on <strong>timeout</strong> for initial <em>ready</em> condition. <a class="reference external" href="https://github.com/odoo/odoo/blob/5aa540091f3f301960aa5a07fba2a6d009f09624/odoo/tests/common.py#L753">Timeout value is 60 sec</a> and <a class="reference external" href="https://github.com/odoo/odoo/blob/5aa540091f3f301960aa5a07fba2a6d009f09624/odoo/tests/common.py#L985">it cannot be changed</a>.</p></li>
 <li><p>reported by tour system on step <strong>timeout</strong>.</p></li>
 </ul>
 </li>
