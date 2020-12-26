@@ -5,14 +5,13 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>How js tour works via phantomjs &#8212; itpp.dev/test/  documentation</title>
+    <title>How js tour works in Odoo unittests &#8212; itpp.dev/test/  documentation</title>
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
     <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/language_data.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Phantom_js + python tests" href="phantom_js-test_cr.html" />
@@ -33,8 +32,8 @@
 
           <div class="body" role="main">
             
-  <div class="section" id="how-js-tour-works-via-phantomjs">
-<h1>How js tour works via phantomjs<a class="headerlink" href="#how-js-tour-works-via-phantomjs" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="how-js-tour-works-in-odoo-unittests">
+<h1>How js tour works in Odoo unittests<a class="headerlink" href="#how-js-tour-works-in-odoo-unittests" title="Permalink to this headline">¶</a></h1>
 <p>The order is as following:</p>
 <ul class="simple">
 <li><p>OPEN <em>url_path</em> from <strong>python</strong> <a class="reference internal" href="phantom_js.html"><span class="doc">phantom_js</span></a> method</p></li>
@@ -58,13 +57,13 @@
 <li><p>error happens:</p>
 <ul>
 <li><p>thrown via <code class="docutils literal notranslate"><span class="pre">raise</span></code></p></li>
-<li><p>reported via <code class="docutils literal notranslate"><span class="pre">console.log('error',</span> <span class="pre">...)</span></code></p></li>
-<li><p>reported via <code class="docutils literal notranslate"><span class="pre">console.error(...)</span></code>, etc.</p></li>
+<li><p>reported via <code class="docutils literal notranslate"><span class="pre">console.error(...)</span></code></p></li>
 <li><p>reported by tour system on <strong>timeout</strong> for initial <em>ready</em> condition. <a class="reference external" href="https://github.com/odoo/odoo/blob/5aa540091f3f301960aa5a07fba2a6d009f09624/odoo/tests/common.py#L753">Timeout value is 60 sec</a> and <a class="reference external" href="https://github.com/odoo/odoo/blob/5aa540091f3f301960aa5a07fba2a6d009f09624/odoo/tests/common.py#L985">it cannot be changed</a>.</p></li>
 <li><p>reported by tour system on step <strong>timeout</strong>.</p></li>
+<li><p><a class="reference external" href="https://github.com/odoo/odoo/commit/fec86404e7de3b22b4945812d525d4017d254c33">Odoo 12 and below</a>: reported via <code class="docutils literal notranslate"><span class="pre">console.log('error',</span> <span class="pre">...)</span></code></p></li>
 </ul>
 </li>
-<li><p><code class="docutils literal notranslate"><span class="pre">'ok'</span></code> is reported via <code class="docutils literal notranslate"><span class="pre">console.log('ok')</span></code></p>
+<li><p><code class="docutils literal notranslate"><span class="pre">'test</span> <span class="pre">successful'</span></code> is reported via <code class="docutils literal notranslate"><span class="pre">console.log</span></code> (<a class="reference external" href="https://github.com/odoo/odoo/commit/fec86404e7de3b22b4945812d525d4017d254c33">in Odoo 12 and below</a> it was just <code class="docutils literal notranslate"><span class="pre">'ok</span></code>)</p>
 <ul>
 <li><p>directly by code</p></li>
 <li><p>indirectly by tour system when all steps are done</p></li>
@@ -107,7 +106,7 @@
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">JS Autotests</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="phantom_js.html">self.phantom_js()</a></li>
 <li class="toctree-l3"><a class="reference internal" href="tests-via-tours.html">JS tests via Tours</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">How js tour works via phantomjs</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">How js tour works in Odoo unittests</a></li>
 <li class="toctree-l3"><a class="reference internal" href="phantom_js-test_cr.html">Phantom_js + python tests</a></li>
 <li class="toctree-l3"><a class="reference internal" href="phantomjs-screenshots.html">Screenshots in PhantomJS tests</a></li>
 <li class="toctree-l3"><a class="reference internal" href="unittest-longpolling.html">Longpolling in unit tests</a></li>

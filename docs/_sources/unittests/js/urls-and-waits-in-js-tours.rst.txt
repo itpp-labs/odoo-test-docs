@@ -1,6 +1,6 @@
-=================================
- How js tour works via phantomjs
-=================================
+=====================================
+ How js tour works in Odoo unittests
+=====================================
 
 The order is as following:
 
@@ -23,12 +23,12 @@ The order is as following:
   * error happens:
 
     * thrown via ``raise``
-    * reported via ``console.log('error', ...)``
-    * reported via ``console.error(...)``, etc.
+    * reported via ``console.error(...)``
     * reported by tour system on **timeout** for initial *ready* condition. `Timeout value is 60 sec <https://github.com/odoo/odoo/blob/5aa540091f3f301960aa5a07fba2a6d009f09624/odoo/tests/common.py#L753>`__ and `it cannot be changed <https://github.com/odoo/odoo/blob/5aa540091f3f301960aa5a07fba2a6d009f09624/odoo/tests/common.py#L985>`__.
     * reported by tour system on step **timeout**.
+    * `Odoo 12 and below <https://github.com/odoo/odoo/commit/fec86404e7de3b22b4945812d525d4017d254c33>`__: reported via ``console.log('error', ...)``
 
-  * ``'ok'`` is reported via ``console.log('ok')``
+  * ``'test successful'`` is reported via ``console.log`` (`in Odoo 12 and below <https://github.com/odoo/odoo/commit/fec86404e7de3b22b4945812d525d4017d254c33>`__ it was just ``'ok``)
 
     * directly by code 
     * indirectly by tour system when all steps are done
